@@ -4,299 +4,846 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sin Menlyn - Indulge in the Forbidden</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
+        /* General Styles */
         body {
-            font-family: Arial, sans-serif;
-            background-color: #1a1a1a;
+            font-family: 'Arial', sans-serif;
+            background-color: #000;
             color: #fff;
             margin: 0;
             padding: 0;
+            line-height: 1.6;
+            scroll-behavior: smooth;
         }
+
+        /* Header Styles */
         header {
-            background-color: #D4AF37; /* Pristine gold */
-            padding: 20px;
+            background-color: #000;
+            padding: 10px 20px;
             text-align: center;
             position: relative;
-        }
-        header h1 {
-            font-size: 36px;
-        }
-        header p {
-            font-size: 18px;
-        }
-  .book-table-button {
-    background-color: #222;
-    color: #D4AF37;
-    font-size: clamp(14px, 2vw, 18px); /* Adjusts between 14px and 18px based on screen size */
-    padding: 1vh 2vw; /* Adjusts padding based on screen size */
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    text-align: center;
-    position: absolute;
-    top: 50%;
-    right: 5vw; /* Adjusts distance from the right based on screen width */
-    transform: translateY(-50%);
-    white-space: nowrap; /* Prevents text wrapping */
-}
-
-@media (max-width: 768px) {
-    .book-table-button {
-        font-size: 14px; /* Smaller font for smaller screens */
-        padding: 8px 16px;
-    }
-}
-
-@media (max-width: 480px) {
-    .book-table-button {
-        font-size: 12px;
-        padding: 6px 12px;
-        right: 3vw; /* Adjusts button position for smaller screens */
-    }
-}
-
-        .book-table-button:hover {
-            background-color: #444;
-        }
-        .weekend-specials {
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
             display: flex;
             justify-content: center;
-            gap: 20px;
-            margin: 30px 0;
-            background-color: #ffffff;
-            padding: 20px;
-            flex-direction: column;
             align-items: center;
         }
-        .special-header {
-            color: #D4AF37; /* Pristine gold */
-            font-size: 28px;
-            margin-bottom: 10px;
+
+        .logo {
+            max-width: 150px;
+            height: auto;
         }
-        .special-time {
-            font-size: 12px;
-            color: #bbb;
-            margin-top: 5px;
+
+        header p {
+            font-size: 1.1em;
+            color: #D4AF37;
+            margin: 0.5em 0;
         }
-        .special-card {
-            background-color: #D4AF37; /* Pristine gold */
+
+        /* Book Table Button */
+        .book-table-button {
+            background-color: #D4AF37;
             color: #000;
-            padding: 20px;
+            font-size: 1em;
+            padding: 0.75em 1.5em;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            right: 2em;
+            transform: translateY(-50%);
+            transition: background-color 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .book-table-button:hover {
+            background-color: #e6c751;
+            color: #000;
+        }
+
+        /* Media Marquee Section */
+        .media-marquee-container {
+            overflow: hidden;
+            background-color: #111;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            margin: 1em 0;
+            padding: 1em;
+            position: relative; /* Needed for absolute positioning of the track */
+        }
+
+        .media-marquee-track {
+            display: flex;
+            width: calc(50px * 10); /* Adjust the 10 based on the number of items */
+            animation: mediaMarquee 40s linear infinite; /* Increase duration for smoother loop */
+        }
+
+        .media-marquee-item {
+            flex: 0 0 auto;
+            width: 250px;
+            margin: 0 0.5em;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .media-marquee-item img,
+        .media-marquee-item video {
+            width: 100%;
+            height: 350px;
+            display: block;
+        }
+
+        @keyframes mediaMarquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(calc(-150px * 5)); } /* Half of items, for smooth loop */
+        }
+
+        /* Specials and Packages Container */
+        .specials-packages-container {
+            display: flex;
+            justify-content: space-between;
+            width: 80%;
+            max-width: 1200px;
+            margin: 2em auto;
+            gap: 2em;
+        }
+
+        @media (max-width: 768px) {
+            .specials-packages-container {
+                flex-direction: column;
+            }
+        }
+
+        /* Weekend Specials Section */
+        .weekend-specials {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2em;
+            background-color: #222;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Packages Section */
+        .packages {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2em;
+            background-color: #222;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        .special-header, .package-header {
+            color: #D4AF37;
+            font-size: 2em;
+            margin-bottom: 0.5em;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .special-time {
+            font-size: 0.9em;
+            color: #aaa;
+            margin-top: 0.2em;
+        }
+
+        .special-card, .package-card {
+            background-color: #333;
+            color: #D4AF37;
+            padding: 1.5em;
             border-radius: 10px;
             text-align: center;
-            width: 30%;
-            font-size: 18px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            margin-bottom: 1em;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .special-card:hover, .package-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .special-card h3, .package-card h3 {
+            font-size: 1.5em;
+            margin-bottom: 0.8em;
+        }
+
+        .special-card p, .package-card p {
+            font-size: 1.1em;
+            color: #eee;
+        }
+
+        /* Menu Section - Grid Style */
+        .menu-section {
+            margin: 2em auto;
+            padding: 2em;
+            background-color: #222;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 1200px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        .menu-section h2 {
+            color: #D4AF37;
+            font-size: 2em;
+            margin-bottom: 1em;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .menu-item {
+            background-color: #333;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .menu-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .menu-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-bottom: 2px solid #D4AF37;
+        }
+
+        .menu-info {
+            padding: 15px;
+        }
+
+        .menu-name {
+            color: #D4AF37;
+            font-size: 1.4em;
             margin-bottom: 10px;
         }
-        .special-card h3 {
-            font-size: 24px;
-            margin-bottom: 15px;
+
+        .menu-description {
+            color: #ccc;
+            margin-bottom: 10px;
+            font-size: 0.9em;
         }
-        .special-card p {
-            font-size: 16px;
+
+        .menu-price {
+            color: #fff;
+            font-weight: bold;
+            font-size: 1.2em;
         }
-        .menu-section {
-            margin: 40px 0;
+
+        .menu-category {
+            margin-top: 40px;
+            margin-bottom: 20px;
+            color: #D4AF37;
+            font-size: 1.6em;
+            border-bottom: 2px solid #D4AF37;
+            padding-bottom: 10px;
+        }
+
+        /* Navigation Bar Styles */
+        .nav-container {
+            background-color: #111;
+            padding: 10px 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            margin-bottom: 1em;
+            overflow-x: auto; /* Enable horizontal scrolling */
+            white-space: nowrap; /* Prevent items from wrapping */
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: flex-start; /* Align items to the start */
+        }
+
+        .nav-item {
+            margin: 0 15px;
+        }
+
+        .nav-link {
+            color: #D4AF37;
+            text-decoration: none;
+            font-size: 1.1em;
+            transition: color 0.3s ease;
+            padding: 8px 15px;
+            border-radius: 5px;
+        }
+
+        .nav-link:hover {
+            color: #fff;
+            background-color: #333;
+        }
+        
+        /* Style adjustments for social media */
+        .social-media {
+            text-align: center;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .social-media a {
+            color: #D4AF37;
+            font-size: 1.5em;
+            margin: 0 10px;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .social-media a:hover {
+            color: #e6c751;
+        }
+
+        /* Dropdown Styles */
+        .dropdown {
+            background-color: #333;
+            color: #D4AF37;
+            padding: 0.6em 1em;
+            border: none;
+            border-radius: 5px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .dropdown:hover {
+            background-color: #555;
+            color: #fff;
+        }
+
+        .dropdown option {
+            background-color: #222;
+            color: #D4AF37;
+        }
+
+        /* Upcoming Events Section */
+        .upcoming-events {
+            margin: 40px auto;
             padding: 20px;
-            background-color: #ffffff;
+            background-color: #222;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 900px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
         }
-        .menu-section h2 {
-            color: #D4AF37; /* Pristine gold */
-            font-size: 28px;
+
+        .upcoming-events h2 {
+            color: #D4AF37;
+            font-size: clamp(1.5em, 3vw, 2em);
             margin-bottom: 15px;
+            text-align: center;
         }
-        .menu-list {
+
+        .event-list {
             list-style-type: none;
             padding: 0;
-      		color: black;
+            color: #eee;
         }
-        .menu-list li {
-            margin: 10px 0;
-        }
-        .dropdown {
-            background-color: #444;
-            padding: 5px;
-            border: none;
-            color: #fff;
-        }
-        .dropdown option {
+
+        .event-list li {
+            margin: 20px 0;
+            padding: 15px;
             background-color: #333;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .event-list li:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .event-title {
+            font-size: clamp(1.1em, 2.2vw, 1.4em);
+            color: #D4AF37;
+            margin-bottom: 5px;
+        }
+
+        .event-date {
+            font-size: clamp(0.8em, 1.6vw, 1em);
+            color: #aaa;
+        }
+
+        .event-description {
+            font-size: clamp(0.9em, 1.8vw, 1.1em);
+            color: #eee;
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: #111;
+            color: #D4AF37;
+            text-align: center;
+            padding: 1em;
+            width: 100%;
+            box-sizing: border-box;
+            border-top: 1px solid #333;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            overflow: auto; /* Enable scroll if content is too long */
+        }
+
+        .modal-content {
+            position: relative;
+            background-color: #333;
+            margin: 15% auto; /* Adjusted margin */
+            padding: 20px;
+            border: 1px solid #666;
+            width: 80%; /* Adjusted width */
+            max-width: 600px; /* Added max-width */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            border-radius: 5px;
+            text-align: center;
+            color: #eee; /* Light grey text color */
+        }
+
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 24px;
+            font-weight: bold;
+            color: #D4AF37; /* Gold color */
+            cursor: pointer;
+        }
+
+        .close:hover {
             color: #fff;
         }
-        footer {
-            background-color: #222;
-            color: #fff;
-            text-align: center;
-            padding: 10px;
+
+        .modal-buttons {
+            margin-top: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .modal-button {
+            background-color: #D4AF37; /* Gold */
+            color: #000; /* Black */
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            text-decoration: none; /* Remove underline */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-button i {
+            margin-right: 8px;
+        }
+
+        .modal-button:hover {
+            background-color: #e6c751; /* Lighter gold */
+        }
+
+        /* Back to top button */
+        .back-to-top {
             position: fixed;
-            bottom: 0;
-            width: 100%;
+            bottom: 20px;
+            right: 20px;
+            background-color: #D4AF37;
+            color: #000;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            opacity: 0;
+            transition: opacity 0.3s;
+            z-index: 99;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+        }
+
+        .back-to-top i {
+            font-size: 1.5em;
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Sin Menlyn</h1>
-        <p>Indulge in the Forbidden - Where luxury meets the night.</p>
-        <button class="book-table-button">Book a Table</button>
+    <header id="top">
+        <img src="logo.jpg" alt="Sin Menlyn Logo" class="logo">
+        <button class="book-table-button" onclick="openModal()">Book a Table</button>
     </header>
 
-    <!-- Weekend Specials Section -->
-    <div class="weekend-specials">
-        <div class="special-header">
-            Weekend Specials
-            <p class="special-time">Available from 22:00 pm - 00:00 am</p>
-        </div>
-        <div class="special-card">
-            <h3>Combo 1</h3>
-            <p>Hubbly + Hennessey VS + 6X Schweppes Mixers</p>
-            <p><strong>R2000</strong></p>
-        </div>
-        <div class="special-card">
-            <h3>Combo 2</h3>
-            <p>Hubbly + 6 Brutal Fruit</p>
-            <p><strong>R550</strong></p>
-        </div>
-        <div class="special-card">
-            <h3>Unlimited Hubbly</h3>
-            <p>Available from 22:00 pm to 00:00 am</p>
-            <p><strong>R400</strong></p>
-        </div>
-    </div>
-
-    <div class="menu-section">
-        <h2>Beers & Ciders</h2>
-        <ul class="menu-list">
-            <li>Corona - R45</li>
-            <li>Ice Tropez - R135</li>
-            <li>Brutal fruit ruby apple 330ml - R45</li>
-            <li>Heineken 330ml - R45</li>
+    <!-- Navigation Bar -->
+    <div class="nav-container">
+        <ul class="nav-list">
+            <li class="nav-item"><a href="#top" class="nav-link">Home</a></li>
+            <li class="nav-item"><a href="#drinks-menu" class="nav-link">Drinks Menu</a></li>
+            <li class="nav-item"><a href="#events" class="nav-link">Events</a></li>
+            <li class="nav-item"><a href="#contact" onclick="openModal(); return false;" class="nav-link">Contact</a></li>
+            <li class="nav-item"><a href="#specials" class="nav-link">Specials</a></li>
+            <li class="nav-item"><a href="#packages" class="nav-link">Packages</a></li>
         </ul>
     </div>
 
-    <div class="menu-section">
+    <!-- Media Marquee Section -->
+    <div class="media-marquee-container">
+        <div class="media-marquee-track">
+            <!-- Item 1: Image -->
+            <div class="media-marquee-item">
+                <img src="views.png" alt="Image 1">
+            </div>
+            
+            <!-- Item 2: Video -->
+            <div class="media-marquee-item">
+                <video width="250" height="450" autoplay muted loop>
+                    <source src="mediarich.mp4" type="video/mp4">
+                    <source src="yourvideo1.webm" type="video/webm">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            
+            <!-- Item 3: Image -->
+            <div class="media-marquee-item">
+                <img src="naughty.png" alt="Image 2">
+            </div>
+            
+            <!-- Item 4: Video -->
+            <div class="media-marquee-item">
+                <video width="250" height="250" autoplay muted loop>
+                    <source src="Download (3).mp4" type="video/mp4">
+                    <source src="yourvideo2.webm" type="video/webm">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            
+            <!-- Item 5: Image -->
+            <div class="media-marquee-item">
+                <img src="champopo.png" alt="Image 2">
+            </div>
+            
+            <!-- Item 6: Video -->
+            <div class="media-marquee-item">
+                <video width="250" height="250" autoplay muted loop>
+                    <source src="Download (2).mp4" type="video/mp4">
+                    <source src="yourvideo3.webm" type="video/webm">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            
+            <!-- Item 7: Image -->
+            <div class="media-marquee-item">
+                <img src="tower.png" alt="Image 2">
+            </div>
+            
+            <!-- Item 8: Video -->
+            <div class="media-marquee-item">
+                <video width="250" height="250" autoplay muted loop>
+                    <source src="Download.mp4" type="video/mp4">
+                    <source src="yourvideo4.webm" type="video/webm">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            
+            <!-- Item 9: Image -->
+            <div class="media-marquee-item">
+                <img src="inside.png" alt="Image 2">
+            </div>
+            
+            <!-- Item 10: Video -->
+            <div class="media-marquee-item">
+                <video width="250" height="250" autoplay muted loop>
+                    <source src="download (4).mp4" type="video/mp4">
+                    <source src="yourvideo5.webm" type="video/webm">
+                </video>
+            </div>
+            
+            <!-- Item 11: Image -->
+            <div class="media-marquee-item">
+                <img src="logo.jpg" alt="Image 2">
+            </div>
+        </div>
+    </div>
+    
+    <!-- Social Media Links -->
+    <div class="social-media">
+        <a href="https://www.facebook.com/people/Sin-Menlyn/61558493771468/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/sinmenlyn/" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.tiktok.com/@sinnightclubmenlyn" target="_blank"><i class="fab fa-tiktok"></i></a>
+        <a href="https://wa.me/yourphonenumber" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    </div>
+
+    <!-- Specials and Packages Section -->
+    <div class="specials-packages-container" id="specials">
+        <!-- Weekend Specials Section -->
+        <div class="weekend-specials">
+            <div class="special-header">
+                Weekend Specials
+                <p class="special-time">Available from 22:00 pm - 00:00 am</p>
+            </div>
+            <div class="special-card">
+                <h3>Combo 1</h3>
+                <p>Hubbly + Hennessey VS + 6X Schweppes Mixers</p>
+                <p><strong>R2000</strong></p>
+            </div>
+            <div class="special-card">
+                <h3>Combo 2</h3>
+                <p>Hubbly + 6 Brutal Fruit</p>
+                <p><strong>R550</strong></p>
+            </div>
+            <div class="special-card">
+                <h3>Unlimited Hubbly</h3>
+                <p>Available from 22:00 pm to 00:00 am</p>
+                <p><strong>R400</strong></p>
+            </div>
+        </div>
+        
+        <!-- Packages Section -->
+        <div class="packages" id="packages">
+            <div class="package-header">
+                Special Packages
+                <p class="special-time">Pre-booking required</p>
+            </div>
+            <div class="package-card">
+                <h3>Baller Package</h3>
+                <p>2 Premium Bottles + Reserved VIP Section + Complimentary Mixers</p>
+                <p><strong>R5000</strong></p>
+            </div>
+            <div class="package-card">
+                <h3>Birthday Package</h3>
+                <p>Complimentary Bottle of Champagne + Reserved Area + Birthday Cake</p>
+                <p><strong>R3000</strong></p>
+            </div>
+            <div class="package-card">
+                <h3>VIP Experience</h3>
+                <p>Private Booth + 1 Premium Bottle + Dedicated Service + Hookah Setup</p>
+                <p><strong>R4000</strong></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Drinks Menu Section -->
+    <div class="menu-section" id="drinks-menu">
         <h2>Drinks Menu</h2>
-        <ul class="menu-list">
-            <li><strong>Champagne</strong>
-                <ul>
-                    <li>Moet & Chandon Nectar Imperial - RXX</li>
-                     <li>Moet & Chandon Ice Imperial - RXX</li>
-                     <li>Moet & Chandon Nectar Imperial - RXX</li>
-                     <li>Moet & Chandon Brut Imperial Rose - RXX</li>
-                    <li>View Clicquot brut- RXX</li>
-                      <li>View Clicquot rich- RXX</li>
-                </ul>
-            </li>
-            <li><strong>Cognac</strong>
-                <ul>
-                    <li>Dusse 750ml - RXX</li>
-                    <li>Hennessy VS - R1800</li>
-                    <li>Martel VS - RXX</li>
-                    <li>Hennessy VSOP - R1800</li>
-                    <li>Martel Blue Swift - RXX</li>
-                    <li>Hennessy XO - R1800</li>
-                    <li>Martel XO - RXX</li>
-                    <li>Remy Martin VSOP - RXX</li>
-                    <li>Remy Martin 1738 - RXX</li>
-                    <li>Remy Martin XO - RXX</li>
-                </ul>
-            </li>
-            <li><strong>Whiskey</strong>
-                <ul>
-                    <li>Jameson 750ml - RXX</li>
-                     <li>Jameson Select 750ml - RXX</li>
-                    <li>Johnny Walker Black - RXX</li>
-                     <li>Johnny Walker Blue - RXX</li>
-                    <li>Glenlivet 12y - RXX</li>
-                    <li>Glenlivet 15y - RXX</li>
-                    <li>Glenfiddich 12y - RXX</li>
-                    <li>Glenfiddich 15y - RXX</li>
-                    <li>Glenfiddich 18y - RXX</li>
-                </ul>
-            </li>
-            <li><strong>Gin</strong>
-                <ul>
-                    <li>Tanqueray 750ml - RXX</li>
-                    <li>Tanqueray No.10 750ml - RXX</li>
-                    <li>Inverroche 750ml - RXX</li>
-                    <li>Hendricks 750ml - RXX</li>
-                </ul>
-            </li>
-            <li><strong>Vodka</strong>
-                <ul>
-                    <li>Ciroc 750ml - RXX</li>
-                    <li>Belvedere 750ml - RXX</li>
-               
-                </ul>
-            </li>
-            <li><strong>Rum</strong>
-                <ul>
-                    <li>Bumbu 75oml - RXX</li>
-                     <li>Bumbu XO 75oml - RXX</li>
-                </ul>
-            </li>
-            <li><strong>Tequila</strong>
-                <ul>
-                    <li>Don Julio Reposado - RXX</li>
-                    <li>Don Julio Blanco - RXX</li>
-                    <li>Don Julio 1942 - RXX</li>
-                    <li>Olmeca Silver - RXX</li>
-                     <li>Olmeca Reposado - RXX</li>
-                     <li>El Jimador Reposado - RXX</li>
-                    <li>El Jimador Blanco - RXX</li>
-                    <li>Jose Cuervo Silver - RXX</li>
-                </ul>
-            </li>
-        </ul>
-    </div>
+        
+        <!-- Champagne Category -->
+        <h3 class="menu-category">Champagne</h3>
+        <div class="menu-grid">
+            <div class="menu-item">
+                <img src="/api/placeholder/400/200" alt="Moet & Chandon Nectar Imperial" class="menu-image">
+                <div class="menu-info">
+                    <h4 class="menu-name">Moet & Chandon Nectar Imperial</h4>
+                    <p class="menu-description">A rich and fruity champagne with notes of pear, peach, and exotic fruits, perfect for celebration.</p>
+                    <p class="menu-price">R2500</p>
+                </div>
+            </div>
+            
+            <div class="menu-item">
+                <img src="/api/placeholder/400/200" alt="Moet & Chandon Ice Imperial" class="menu-image">
+                <div class="menu-info">
+                    <h4 class="menu-name">Moet & Chandon Ice Imperial</h4>
+                    <p class="menu-description">The first champagne specifically created to be enjoyed over ice, with intense tropical fruit notes.</p>
+                    <p class="menu-price">R2800</p>
+                </div>
+            </div>
+            
+            <div class="menu-item">
+                <img src="/api/placeholder/400/200" alt="Veuve Clicquot Rich" class="menu-image">
+                <div class="menu-info">
+                    <h4 class="menu-name">Veuve Clicquot Rich</h4>
+                    <p class="menu-description">A sweeter expression designed for mixology, perfect with fresh fruits and premium mixers.</p>
+                    <p class="menu-price">R2600</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Cognac Category -->
+        <h3 class="menu-category">Cognac</h3>
+        <div class="menu-grid">
+            <div class="menu-item">
+                <img src="henesseyvs.jpg" alt="Hennessy VS" class="menu-image">
+                <div class="menu-info">
+                    <h4 class="menu-name">Hennessy VS</h4>
+                    <p class="menu-description">A bold and distinctive blend with notes of oak, toasted almond, and fresh grapes. The perfect foundation for cocktails.</p>
+                    <p class="menu-price">R1800</p>
+                </div>
+            </div>
+            
+            <div class="menu-item">
+                <img src="/api/placeholder/400/200" alt="Hennessy VSOP" class="menu-image">
+                <div class="menu-info">
+                    <h4 class="menu-name">Hennessy VSOP</h4>
+                    <p class="menu-description">Aged for at least 4 years, offering a smooth balance of fruit and oak flavors with a hint of vanilla.</p>
+                    <p class="menu-price">R2200</p>
+                </div>
+            </div>
+            
+            <div class="menu-item">
+                <img src="/api/placeholder/400/200" alt="D'USSÉ VSOP" class="menu-image">
+                <div class="menu-info">
+                    <h4 class="menu-name">D'USSÉ VSOP</h4>
+                    <p class="menu-description">A naturally smooth blend with notes of caramel, spices, and almond, aged in French oak barrels.</p>
+                    <p class="menu-price">R2500</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Vodka Category -->
+        <h3 class="menu-category">Vodka</h3>
+        <div class="menu-grid">
+            <div class="menu-item">
+                <img src="/api/placeholder/400/200" alt="Ciroc" class="menu-image">
+                <div class="menu-info">
+                    <h4 class="menu-name">Ciroc</h4>
+                    <p class="menu-description">Distilled from French grapes for an exceptionally smooth, fresh taste with a hint of citrus.</p>
+                    <p class="menu-price">R1600</p>
+                </div>
+            </div>
+            
+            <div class="menu-item">
+                <img src="/api/placeholder/400/200" alt="Grey Goose" class="menu-image">
+                <div class="menu-info">
+                    <h4 class="menu-name">Grey Goose</h4>
+                    <p class="menu-description">Made with French wheat and pristine spring water, offering a crisp, fresh taste with a subtle sweetness.</p>
+                    <p class="menu-price">R1800</p>
+                </div>
+            </div>
+            
+            <div class="menu-item">
+                <img src="/api/placeholder/400/200" alt="Belvedere" class="menu-image">
+                <div class="menu-info">
+                    <h4 class="menu-name">Belvedere</h4>
+                    <p class="menu-description">Crafted from Polish rye and purified water, delivering a distinctive, velvety smooth character.</p>
+                    <p class="menu-price">R1700</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Beers & Ciders Category -->
+        <h3 class="menu-category">Beers & Ciders</h3>
+        <div class="menu-grid">
+            <div class="menu-item">
+                <img src="/api/placeholder/400/200" alt="Corona" class="menu-image">
+                <div class="menu-info">
+                    <h4 class="menu-name">Corona</h4>
+                    <p class="menu-description">A light, refreshing Mexican beer with a distinctive pale straw color and subtle hop character.</p>
+                    <p class="menu-price">R45</p>
+                </div>
+            </div>
+            
+            <div class="menu-item">
+                <img src="/api/placeholder/400/200" alt="Ice Tropez" class="menu-image">
+                <div class="menu-info">
+                    <h4 class="menu-name">Ice Tropez</h4>
+                    <p class="menu-description">A sophisticated blend of rosé wine, sparkling water and peach, perfect for a refreshing experience.</p>
+                    <p class="menu-price">R135</p>
+                </div>
+            </div>
+            
+            <div class="menu-item">
+                <img src="/api/placeholder/400/200" alt="Brutal Fruit Ruby Apple" class="menu-image">
+                <div class="menu-info">
+                    <h4 class="menu-name">Brutal Fruit Ruby Apple</h4>
+                    <p class="menu-description">A sweet, sparkling alcoholic apple beverage with a crisp, fruity finish.</p>
+                    <p class="menu-price">R45</p>
+                </div>
+            </div>
+            
+            <div class="menu-item">
+                <img src="/api/placeholder/400/200" alt="Heineken" class="menu-image">
+                <div class="menu-info">
+                    <h4 class="menu-name">Heineken</h4>
+                    <p class="menu-description">A premium lager with a balanced taste and subtle bitterness, served ice cold.</p>
+                    <p class="menu-price">R45</p>
+                </div>
+            </div>
+        </div>
 
-    <div class="menu-section">
-        <h2>Tequila & Shooters</h2>
-        <ul class="menu-list">
-              <li>Don Julio Reposado - RXX</li>
-                    <li>Don Julio Blanco - RXX</li>
-                    <li>Don Julio 1942 - RXX</li>
-                    <li>Olmeca Silver - RXX</li>
-                     <li>Olmeca Reposado - RXX</li>
-                     <li>El Jimador Reposado - RXX</li>
-                    <li>El Jimador Blanco - RXX</li>
-                    <li>Jose Cuervo Silver - RXX</li>
-        </ul>
-    </div>
-
-    <div class="menu-section">
-        <h2>Non-alcoholic Mixers</h2>
-        <ul class="menu-list">
-            <li>Sprite 200ml - RXX</li>
-            <li>Coke 330ml - RXX</li>
-            <li>Schweppes lemonade 200ml - RXX</li>
-            <li>Schweppes pink tonic 200ml - RXX</li>
-            <li>Schweppes indian tonic 200ml - RXX</li>
-            <li>Schweppes ginger ale 200ml - RXX</li>
-            <li>Schweppes dry lemon 200ml - RXX</li>
-            <li>Redbull 220ml - RXX</li>
-            <li>Valpre Spring still Water 330ml - RXX</li>
-            <li>Valpre Spring sparkling Water 330ml - RXX</li>
-        </ul>
-    </div>
-
-    <div class="menu-section">
-        <h2>Hubbly & Cigars</h2>
-        <ul class="menu-list">
-            <li>Hubbly Rental - R600 per unit</li>
-            <li><strong>Cigars</strong>
-                <select class="dropdown">
-                    <option>Cigar 1 - RXX</option>
-                    <option>Cigar 2 - RXX</option>
-                    <option>Cigar 3 - RXX</option>
-                </select>
+     <!-- Upcoming Events Section -->
+    <div class="upcoming-events">
+        <h2>Upcoming Events</h2>
+        <ul class="event-list">
+            <li>
+                <h3 class="event-title">Ladies Night</h3>
+                <p class="event-date">Every Wednesday</p>
+                <p class="event-description">Free entry for ladies before 10 PM. Drink specials all night!</p>
+            </li>
+            <li>
+                <h3 class="event-title">DJ So & So</h3>
+                <p class="event-date">March 15, 2025</p>
+                <p class="event-description">The best DJ party ever!</p>
             </li>
         </ul>
     </div>
 
     <footer>
-        <p>&copy; 2025 Sin Menlyn | All Rights Reserved</p>
+        <p>&copy; 2025 Sin Menlyn. All rights reserved.</p>
     </footer>
+
+    <!-- Modal -->
+    <div id="bookingModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Book Your Table</h2>
+            <p>Please contact us to book a table:</p>
+            <div class="modal-buttons">
+                <a href="tel:+1234567890" class="modal-button">Call Us</a>
+                <a href="mailto:info@sinmenlyn.com" class="modal-button">Email Us</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openModal() {
+            document.getElementById('bookingModal').style.display = 'block';
+        }
+
+        function closeModal() {
+            document.getElementById('bookingModal').style.display = 'none';
+        }
+
+        window.onclick = function(event) {
+            var modal = document.getElementById('bookingModal');
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
+    </script>
 </body>
 </html>
+	
