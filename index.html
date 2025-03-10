@@ -585,60 +585,105 @@
 
         .featured-link:hover {
             color: #fff;
-
-	/* Packages Section */
-        /* Packages Section */
+	/* Packages Section - Floating Effect */
 .packages-section {
-    background-color: #111; /* Dark background for premium look */
-    padding: 4em 2em;
+    background: linear-gradient(135deg, rgba(17, 17, 17, 0.9), rgba(34, 34, 34, 0.9)); 
+    padding: 5em 2em;
     text-align: center;
+    position: relative;
+    overflow: hidden; /* Ensures no unwanted scroll effects */
+}
+
+/* Adding a subtle animated glow effect */
+.packages-section::before {
+    content: "";
+    position: absolute;
+    width: 150%;
+    height: 150%;
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.15) 10%, transparent 60%);
+    animation: glowMove 10s infinite linear alternate;
+    top: -50%;
+    left: -50%;
+    z-index: 0;
+}
+
+@keyframes glowMove {
+    0% { transform: rotate(0deg) translateX(20px); }
+    100% { transform: rotate(360deg) translateX(-20px); }
 }
 
 /* Container */
 .packages-container {
     max-width: 1200px;
     margin: 0 auto;
+    position: relative;
+    z-index: 2;
 }
 
 /* Section Header */
 .section-header h2 {
-    font-size: 2.5em;
+    font-size: 2.8em;
     color: #D4AF37; /* Gold color */
     text-transform: uppercase;
     letter-spacing: 0.1em;
     margin-bottom: 1em;
     font-weight: bold;
+    text-shadow: 0px 0px 10px rgba(212, 175, 55, 0.5);
+    animation: fadeIn 1s ease-in-out;
 }
 
-/* Packages Grid */
+/* Floating Packages Grid */
 .packages-grid {
     display: flex;
     justify-content: center;
     gap: 2em;
     flex-wrap: wrap;
+    perspective: 1000px; /* Adds depth */
 }
 
-/* Individual Package Card */
+/* Individual Package Card - Floating Glass Effect */
 .package-card {
-    background: #222; /* Slightly lighter than background */
+    background: rgba(34, 34, 34, 0.85); /* Transparent glassmorphism effect */
+    backdrop-filter: blur(12px);
+    border-radius: 15px;
     padding: 2em;
-    border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
     text-align: center;
     max-width: 320px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.6);
+    transition: transform 0.5s ease, box-shadow 0.3s ease;
+    transform: translateY(0px) rotateX(5deg);
+}
+
+/* Adding floating animation */
+.package-card:nth-child(1) { animation: floatUp 4s infinite ease-in-out; }
+.package-card:nth-child(2) { animation: floatUp 4s infinite ease-in-out 1s; }
+.package-card:nth-child(3) { animation: floatUp 4s infinite ease-in-out 2s; }
+
+@keyframes floatUp {
+    0% { transform: translateY(0px) rotateX(5deg); }
+    50% { transform: translateY(-10px) rotateX(-5deg); }
+    100% { transform: translateY(0px) rotateX(5deg); }
 }
 
 .package-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.8);
+    transform: translateY(-5px) rotateX(0deg);
+    box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.8);
 }
 
 /* Package Icon */
 .package-icon i {
-    font-size: 3em;
+    font-size: 3.5em;
     color: #D4AF37;
-    margin-bottom: 0.5em;
+    margin-bottom: 0.8em;
+    text-shadow: 0px 0px 8px rgba(212, 175, 55, 0.5);
+    animation: pulse 2s infinite;
+}
+
+/* Pulsing animation for icons */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
 }
 
 /* Package Title */
@@ -680,20 +725,24 @@
     text-decoration: none;
     font-weight: bold;
     transition: background 0.3s ease, transform 0.2s ease;
+    box-shadow: 0px 5px 15px rgba(212, 175, 55, 0.4);
 }
 
 .package-button:hover {
     background: #c39d28;
     transform: scale(1.05);
+    box-shadow: 0px 8px 20px rgba(212, 175, 55, 0.6);
 }
 
-/* Responsive Design */
+/* Responsive Adjustments */
 @media (max-width: 1024px) {
     .packages-grid {
         flex-direction: column;
         align-items: center;
     }
 }
+
+
 
     </style>
 </head>
