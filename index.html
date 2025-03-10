@@ -103,87 +103,54 @@
             100% { transform: translateX(calc(-150px * 5)); } /* Half of items, for smooth loop */
         }
 
-        /* Specials and Packages Container */
-        .specials-packages-container {
-            display: flex;
-            justify-content: space-between;
-            width: 80%;
-            max-width: 1200px;
-            margin: 2em auto;
-            gap: 2em;
-        }
+   /* Specials Section */
 
-        @media (max-width: 768px) {
-            .specials-packages-container {
-                flex-direction: column;
-            }
-        }
+@media (max-width: 768px) {
+    .specials-container {
+        flex-direction: column;
+        gap: 1em;
+    }
 
-        /* Weekend Specials Section */
-        .weekend-specials {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 2em;
-            background-color: #222;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-        }
+    .specials {
+        width: 100%;
+    }
+}
 
-        /* Packages Section */
-        .packages {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 2em;
-            background-color: #222;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-        }
 
-        .special-header, .package-header {
-            color: #D4AF37;
-            font-size: 2em;
-            margin-bottom: 0.5em;
-            text-align: center;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-        }
+.special-card, {
+    background-color: #333;
+    color: #D4AF37;
+    padding: 1.5em;
+    border-radius: 10px;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 1em;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
-        .special-time {
-            font-size: 0.9em;
-            color: #aaa;
-            margin-top: 0.2em;
-        }
+.special-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.5);
+}
 
-        .special-card, .package-card {
-            background-color: #333;
-            color: #D4AF37;
-            padding: 1.5em;
-            border-radius: 10px;
-            text-align: center;
-            width: 100%;
-            margin-bottom: 1em;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
+.special-card h3, {
+    font-size: 1.5em;
+    margin-bottom: 0.8em;
+}
 
-        .special-card:hover, .package-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.5);
-        }
+.special-card p, {
+    font-size: 1.1em;
+    color: #eee;
+}
 
-        .special-card h3, .package-card h3 {
-            font-size: 1.5em;
-            margin-bottom: 0.8em;
-        }
-
-        .special-card p, .package-card p {
-            font-size: 1.1em;
-            color: #eee;
-        }
+/* Responsive Design */
+@media (max-width: 768px) {
+    .specials-container {
+        flex-direction: column;
+        gap: 1em;
+    }
+}
 
         /* Menu Section - Grid Style */
         .menu-section {
@@ -341,58 +308,71 @@
             color: #D4AF37;
         }
 
-        /* Upcoming Events Section */
-        .upcoming-events {
-            margin: 40px auto;
-            padding: 20px;
-            background-color: #222;
+       /* Events Section */
+        .events-section {
+            padding: 80px 0;
+            background-color: #0a0a0a;
+        }
+
+        .event-card {
+            background: linear-gradient(145deg, #111 0%, #222 100%);
             border-radius: 10px;
-            width: 80%;
-            max-width: 900px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-        }
-
-        .upcoming-events h2 {
-            color: #D4AF37;
-            font-size: clamp(1.5em, 3vw, 2em);
-            margin-bottom: 15px;
-            text-align: center;
-        }
-
-        .event-list {
-            list-style-type: none;
-            padding: 0;
-            color: #eee;
-        }
-
-        .event-list li {
-            margin: 20px 0;
-            padding: 15px;
-            background-color: #333;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+            margin-bottom: 30px;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        .event-list li:hover {
+        .event-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.5);
-        }
-
-        .event-title {
-            font-size: clamp(1.1em, 2.2vw, 1.4em);
-            color: #D4AF37;
-            margin-bottom: 5px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
         }
 
         .event-date {
-            font-size: clamp(0.8em, 1.6vw, 1em);
-            color: #aaa;
+            background-color: #D4AF37;
+            color: #000;
+            font-weight: bold;
+            display: inline-block;
+            padding: 8px 15px;
+            border-radius: 30px;
+            margin-bottom: 15px;
+            align-self: flex-start;
+        }
+
+        .event-title {
+            font-size: 1.8rem;
+            color: #fff;
+            margin-bottom: 15px;
         }
 
         .event-description {
-            font-size: clamp(0.9em, 1.8vw, 1.1em);
-            color: #eee;
+            color: #ccc;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .event-button {
+            background-color: transparent;
+            color: #D4AF37;
+            border: 2px solid #D4AF37;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            align-self: flex-start;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .event-button:hover {
+            background-color: #D4AF37;
+            color: #000;
         }
 
         /* Footer Styles */
@@ -551,6 +531,168 @@
             transform: translateY(-3px);
             box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
         }
+	/*Featured Section*/
+		 .featured-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 10px;
+        }
+
+        .featured-card {
+            background-color: rgba(20, 20, 20, 0.8);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .featured-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        .featured-image {
+            height: 200px;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .featured-content {
+            padding: 25px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .featured-title {
+            color: #D4AF37;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .featured-text {
+            color: #ddd;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .featured-link {
+            color: #D4AF37;
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+            align-self: flex-start;
+        }
+
+        .featured-link:hover {
+            color: #fff;
+
+	/* Packages Section */
+        .packages-section {
+            padding: 80px 0;
+            background: url('/api/placeholder/1200/800') center/cover fixed no-repeat;
+            position: relative;
+        }
+
+        .packages-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+        }
+
+        .packages-container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .packages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .package-card {
+            background: rgba(20, 20, 20, 0.7);
+            border: 1px solid #333;
+            border-radius: 10px;
+            padding: 40px 30px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+        }
+
+        .package-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+            background: rgba(30, 30, 30, 0.9);
+            border-color: #D4AF37;
+        }
+
+        .package-icon {
+            font-size: 3rem;
+            color: #D4AF37;
+            margin-bottom: 20px;
+        }
+
+        .package-title {
+            color: #D4AF37;
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        .package-price {
+            font-size: 2.2rem;
+            color: #fff;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .package-features {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 30px 0;
+            color: #ccc;
+        }
+
+        .package-features li {
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .package-features li:last-child {
+            border-bottom: none;
+        }
+
+        .package-button {
+            background-color: #D4AF37;
+            color: #000;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 30px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: inline-block;
+            text-decoration: none;
+        }
+
+        .package-button:hover {
+            background-color: #fff;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
+        }	
     </style>
 </head>
 <body>
@@ -661,46 +803,127 @@
                 Weekend Specials
                 <p class="special-time">Available from 22:00 pm - 00:00 am</p>
             </div>
-            <div class="special-card">
-                <h3>Combo 1</h3>
-                <p>Hubbly + Hennessey VS + 6X Schweppes Mixers</p>
-                <p><strong>R2000</strong></p>
-            </div>
-            <div class="special-card">
-                <h3>Combo 2</h3>
-                <p>Hubbly + 6 Brutal Fruit</p>
-                <p><strong>R550</strong></p>
-            </div>
-            <div class="special-card">
-                <h3>Unlimited Hubbly</h3>
-                <p>Available from 22:00 pm to 00:00 am</p>
-                <p><strong>R400</strong></p>
-            </div>
-        </div>
-        
-        <!-- Packages Section -->
-        <div class="packages" id="packages">
-            <div class="package-header">
-                Special Packages
-                <p class="special-time">Pre-booking required</p>
-            </div>
-            <div class="package-card">
-                <h3>Baller Package</h3>
-                <p>2 Premium Bottles + Reserved VIP Section + Complimentary Mixers</p>
-                <p><strong>R5000</strong></p>
-            </div>
-            <div class="package-card">
-                <h3>Birthday Package</h3>
-                <p>Complimentary Bottle of Champagne + Reserved Area + Birthday Cake</p>
-                <p><strong>R3000</strong></p>
-            </div>
-            <div class="package-card">
-                <h3>VIP Experience</h3>
-                <p>Private Booth + 1 Premium Bottle + Dedicated Service + Hookah Setup</p>
-                <p><strong>R4000</strong></p>
-            </div>
-        </div>
+            <img src="specials.jpg" alt="specials">
+        </div>  
     </div>
+	
+	 <!-- Featured Section -->
+    <section class="featured-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Why Choose Sin</h2>
+            </div>
+            <div class="featured-grid">
+                <div class="featured-card">
+                    <img src="champopo.png" alt="VIP Experience" class="featured-image">
+                    <div class="featured-content">
+                        <h3 class="featured-title">VIP Experience</h3>
+                        <p class="featured-text">[Add description about your premium VIP experience, bottle service, exclusive access, etc.]</p>
+                        <a href="#packages" class="featured-link">Explore VIP Packages</a>
+                    </div>
+                </div>
+                <div class="featured-card">
+                    <img src="views.png" alt="Top DJs" class="views">
+                    <div class="featured-content">
+                        <h3 class="featured-title">World-Class Entertainment</h3>
+                        <p class="featured-text">[Add description about your entertainment, DJs, performers, etc.]</p>
+                        <a href="#events" class="featured-link">Upcoming Events</a>
+                    </div>
+                </div>
+                <div class="featured-card">
+                    <img src="fullbucket.png" alt="Premium Drinks" class="featured-image">
+                    <div class="featured-content">
+                        <h3 class="featured-title">Premium Selections</h3>
+                        <p class="featured-text">[Add description about your premium drinks, cocktails, etc.]</p>
+                        <a href="#" class="featured-link" onclick="toggleDropdown()">View Menu</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Packages Section -->
+    <section class="packages-section" id="packages">
+        <div class="container packages-container">
+            <div class="section-header">
+                <h2>Celebration Packages</h2>
+            </div>
+            <div class="packages-grid">
+                <div class="package-card">
+                    <div class="package-icon">
+                        <i class="fas fa-glass-cheers"></i>
+                    </div>
+                    <h3 class="package-title">Birthday Package</h3>
+                    <p class="package-price">R3000</p>
+                    <ul class="package-features">
+                        <li>[Add feature: Reserved area for X people]</li>
+                        <li>[Add feature: Complimentary bottle]</li>
+                        <li>[Add feature: Birthday cake]</li>
+                        <li>[Add feature: VIP treatment]</li>
+                    </ul>
+                    <a href="#" class="package-button" onclick="openModal('bookingModal')">Book Now</a>
+                </div>
+                <div class="package-card">
+                    <div class="package-icon">
+                        <i class="fas fa-crown"></i>
+                    </div>
+                    <h3 class="package-title">VIP Experience</h3>
+                    <p class="package-price">R4000</p>
+                    <ul class="package-features">
+                        <li>[Add feature: Private booth]</li>
+                        <li>[Add feature: Premium bottle]</li>
+                        <li>[Add feature: Dedicated service]</li>
+                        <li>[Add feature: Hookah setup]</li>
+                    </ul>
+                    <a href="#" class="package-button" onclick="openModal('bookingModal')">Book Now</a>
+                </div>
+                <div class="package-card">
+                    <div class="package-icon">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                    <h3 class="package-title">Baller Package</h3>
+                    <p class="package-price">R5000</p>
+                    <ul class="package-features">
+                        <li>[Add feature: 2 Premium bottles]</li>
+                        <li>[Add feature: Reserved VIP section]</li>
+                        <li>[Add feature: Complimentary mixers]</li>
+                        <li>[Add feature: Priority entry]</li>
+                    </ul>
+                    <a href="#" class="package-button" onclick="openModal('bookingModal')">Book Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+	<!-- Events Section -->
+    <section class="events-section" id="events">
+        <div class="container">
+            <div class="section-header">
+                <h2>Upcoming Events</h2>
+            </div>
+            <div class="events-container">
+                <div class="event-card">
+                    <span class="event-date">27 March 2025</span>
+                    <h3 class="event-title">DJ kabza de Small</h3>
+                    <p class="event-description">Come join us for a special night with superstar DJ Kabza de Small</p>
+                    <a href="#" class="event-button" onclick="openModal('bookingModal')">Reserve Now</a>
+                </div>
+                <div class="event-card">
+                    <span class="event-date">March 15, 2025</span>
+                    <h3 class="event-title">Oscar Mbo & Babalwa</h3>
+                    <p class="event-description">Come join us for a special night with superstar Oscar Mbo, coupled with the lovely vocals of Babalwa M</p>
+                    <a href="#" class="event-button" onclick="openModal('bookingModal')">Reserve Now</a>
+                </div>
+                <div class="event-card">
+                    <span class="event-date">Coming Soon</span>
+                    <h3 class="event-title">Celebrity Appearance</h3>
+                    <p class="event-description">[Add description about upcoming celebrity appearances or special events]</p>
+                    <a href="#" class="event-button" onclick="openModal('bookingModal')">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
 
     <!-- Drinks Menu Section -->
     <div class="menu-section" id="drinks-menu">
@@ -839,25 +1062,6 @@ belvedere.jpg" alt="Belvedere" class="menu-image">
                 </div>
             </div>
         </div>
-    </div>
-
-     <!-- Upcoming Events Section -->
-    <div class="upcoming-events">
-        <h2>Upcoming Events</h2>
-        <ul class="event-list">
-            <li>
-                <h3 class="event-title">DJ Kabza de Small</h3>
-                <p class="event-date">27 March 2025</p>
-		<img src="" alt="" class=""
-                <p class="event-description">Free entry. Drink specials from 22:00 - 00:00!</p>
-            </li>
-            <li>
-                <h3 class="event-title">Oscar Mbo</h3>
-                <p class="event-date">March 15, 2025</p>
-		<img src="" alt="" class=""
-                <p class="event-description">Free entry. Drink specials from 22:00 - 00:00!</p>
-            </li>
-        </ul>
     </div>
 
     <footer>
