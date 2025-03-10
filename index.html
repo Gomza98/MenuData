@@ -585,164 +585,189 @@
 
         .featured-link:hover {
             color: #fff;
-	/* Packages Section - Floating Effect */
-.packages-section {
-    background: linear-gradient(135deg, rgba(17, 17, 17, 0.9), rgba(34, 34, 34, 0.9)); 
-    padding: 5em 2em;
-    text-align: center;
-    position: relative;
-    overflow: hidden; /* Ensures no unwanted scroll effects */
-}
+	 .packages-section {
+            background: linear-gradient(135deg, rgba(17, 17, 17, 0.9), rgba(34, 34, 34, 0.9)); 
+            padding: 5em 2em;
+            text-align: center;
+            position: relative;
+            overflow: hidden; /* Ensures no unwanted scroll effects */
+        }
 
-/* Adding a subtle animated glow effect */
-.packages-section::before {
-    content: "";
-    position: absolute;
-    width: 150%;
-    height: 150%;
-    background: radial-gradient(circle, rgba(212, 175, 55, 0.15) 10%, transparent 60%);
-    animation: glowMove 10s infinite linear alternate;
-    top: -50%;
-    left: -50%;
-    z-index: 0;
-}
+        /* Adding a subtle animated glow effect */
+        .packages-section::before {
+            content: "";
+            position: absolute;
+            width: 150%;
+            height: 150%;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.15) 10%, transparent 60%);
+            animation: glowMove 10s infinite linear alternate;
+            top: -50%;
+            left: -50%;
+            z-index: 0;
+        }
 
-@keyframes glowMove {
-    0% { transform: rotate(0deg) translateX(20px); }
-    100% { transform: rotate(360deg) translateX(-20px); }
-}
+        @keyframes glowMove {
+            0% { transform: rotate(0deg) translateX(20px); }
+            100% { transform: rotate(360deg) translateX(-20px); }
+        }
 
-/* Container */
-.packages-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    position: relative;
-    z-index: 2;
-}
+        /* Container */
+        .packages-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
 
-/* Section Header */
-.section-header h2 {
-    font-size: 2.8em;
-    color: #D4AF37; /* Gold color */
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    margin-bottom: 1em;
-    font-weight: bold;
-    text-shadow: 0px 0px 10px rgba(212, 175, 55, 0.5);
-    animation: fadeIn 1s ease-in-out;
-}
+        /* Section Header */
+        .section-header h2 {
+            font-size: 2.8em;
+            color: #D4AF37; /* Gold color */
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 1em;
+            font-weight: bold;
+            text-shadow: 0px 0px 10px rgba(212, 175, 55, 0.5);
+            animation: fadeIn 1s ease-in-out;
+        }
 
-/* Floating Packages Grid */
-.packages-grid {
-    display: flex;
-    justify-content: center;
-    gap: 2em;
-    flex-wrap: wrap;
-    perspective: 1000px; /* Adds depth */
-}
+        /* Floating Packages Grid */
+        .packages-grid {
+            display: flex;
+            justify-content: center;
+            gap: 2em;
+            flex-wrap: wrap;
+            perspective: 1000px; /* Adds depth */
+        }
 
-/* Individual Package Card - Floating Glass Effect */
-.package-card {
-    background: rgba(34, 34, 34, 0.85); /* Transparent glassmorphism effect */
-    backdrop-filter: blur(12px);
-    border-radius: 15px;
-    padding: 2em;
-    text-align: center;
-    max-width: 320px;
-    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.6);
-    transition: transform 0.5s ease, box-shadow 0.3s ease;
-    transform: translateY(0px) rotateX(5deg);
-}
+        /* Individual Package Card - Floating Glass Effect */
+        .package-card {
+            background: rgba(34, 34, 34, 0.85);
+            backdrop-filter: blur(12px);
+            border-radius: 15px;
+            padding: 2em;
+            text-align: center;
+            max-width: 320px;
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.6);
+            transition: transform 0.5s ease, box-shadow 0.3s ease;
+            transform: translateY(0px) rotateX(5deg);
+        }
 
-/* Adding floating animation */
-.package-card:nth-child(1) { animation: floatUp 4s infinite ease-in-out; }
-.package-card:nth-child(2) { animation: floatUp 4s infinite ease-in-out 1s; }
-.package-card:nth-child(3) { animation: floatUp 4s infinite ease-in-out 2s; }
+        /* Adding floating animation */
+        .package-card:nth-child(1) { animation: floatUp 4s infinite ease-in-out; }
+        .package-card:nth-child(2) { animation: floatUp 4s infinite ease-in-out 1s; }
+        .package-card:nth-child(3) { animation: floatUp 4s infinite ease-in-out 2s; }
 
-@keyframes floatUp {
-    0% { transform: translateY(0px) rotateX(5deg); }
-    50% { transform: translateY(-10px) rotateX(-5deg); }
-    100% { transform: translateY(0px) rotateX(5deg); }
-}
+        @keyframes floatUp {
+            0% { transform: translateY(0px) rotateX(5deg); }
+            50% { transform: translateY(-10px) rotateX(-5deg); }
+            100% { transform: translateY(0px) rotateX(5deg); }
+        }
 
-.package-card:hover {
-    transform: translateY(-5px) rotateX(0deg);
-    box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.8);
-}
+        /* Add the missing fadeIn animation */
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
 
-/* Package Icon */
-.package-icon i {
-    font-size: 3.5em;
-    color: #D4AF37;
-    margin-bottom: 0.8em;
-    text-shadow: 0px 0px 8px rgba(212, 175, 55, 0.5);
-    animation: pulse 2s infinite;
-}
+        .package-card:hover {
+            transform: translateY(-5px) rotateX(0deg);
+            box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.8);
+        }
 
-/* Pulsing animation for icons */
-@keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.1); }
-    100% { transform: scale(1); }
-}
+        /* Package Icon */
+        .package-icon i {
+            font-size: 3.5em;
+            color: #D4AF37;
+            margin-bottom: 0.8em;
+            text-shadow: 0px 0px 8px rgba(212, 175, 55, 0.5);
+            animation: pulse 2s infinite;
+        }
 
-/* Package Title */
-.package-title {
-    font-size: 1.8em;
-    color: #fff;
-    margin-bottom: 0.5em;
-}
+        /* Pulsing animation for icons */
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
 
-/* Package Price */
-.package-price {
-    font-size: 1.5em;
-    font-weight: bold;
-    color: #D4AF37;
-    margin-bottom: 1em;
-}
+        /* Package Title */
+        .package-title {
+            font-size: 1.8em;
+            color: #fff;
+            margin-bottom: 0.5em;
+        }
 
-/* Package Features List */
-.package-features {
-    list-style: none;
-    padding: 0;
-    margin-bottom: 1.5em;
-}
+        /* Package Price */
+        .package-price {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #D4AF37;
+            margin-bottom: 1em;
+        }
 
-.package-features li {
-    font-size: 1.1em;
-    color: #ccc;
-    margin-bottom: 0.5em;
-}
+        /* Package Features List */
+        .package-features {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 1.5em;
+        }
 
-/* Book Now Button */
-.package-button {
-    display: inline-block;
-    padding: 0.8em 1.5em;
-    font-size: 1.2em;
-    color: #111;
-    background: #D4AF37;
-    border-radius: 6px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: background 0.3s ease, transform 0.2s ease;
-    box-shadow: 0px 5px 15px rgba(212, 175, 55, 0.4);
-}
+        .package-features li {
+            font-size: 1.1em;
+            color: #ccc;
+            margin-bottom: 0.5em;
+        }
 
-.package-button:hover {
-    background: #c39d28;
-    transform: scale(1.05);
-    box-shadow: 0px 8px 20px rgba(212, 175, 55, 0.6);
-}
+        /* Book Now Button */
+        .package-button {
+            display: inline-block;
+            padding: 0.8em 1.5em;
+            font-size: 1.2em;
+            color: #111;
+            background: #D4AF37;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background 0.3s ease, transform 0.2s ease;
+            box-shadow: 0px 5px 15px rgba(212, 175, 55, 0.4);
+        }
 
-/* Responsive Adjustments */
-@media (max-width: 1024px) {
-    .packages-grid {
-        flex-direction: column;
-        align-items: center;
-    }
-}
+        .package-button:hover {
+            background: #c39d28;
+            transform: scale(1.05);
+            box-shadow: 0px 8px 20px rgba(212, 175, 55, 0.6);
+        }
 
+        /* Responsive Adjustments */
+        @media (max-width: 1024px) {
+            .packages-grid {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
 
+        /* Container for featured section */
+        .container {
+            width: 80%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4em 0;
+        }
+
+        /* Section header for featured section */
+        .section-header {
+            text-align: center;
+            margin-bottom: 3em;
+        }
+
+        .section-header h2 {
+            font-size: 2.5em;
+            color: #D4AF37;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 0.5em;
+        }
 
     </style>
 </head>
@@ -893,9 +918,8 @@
         </div>
     </section>
 
-    <!-- Packages Section -->
-    <section class="packages-section" id="packages">
-        <div class="container packages-container">
+   <section class="packages-section" id="packages">
+        <div class="packages-container">
             <div class="section-header">
                 <h2>Celebration Packages</h2>
             </div>
