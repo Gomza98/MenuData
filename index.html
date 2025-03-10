@@ -732,6 +732,55 @@
             margin-bottom: 0.5em;
         }
 
+	/* Dropdown Menu Styles */
+.dropdown-container {
+    text-align: center;
+    margin: 30px auto;
+    width: 100%;
+    max-width: 300px;
+}
+
+.dropdown {
+    background-color: #333;
+    color: #D4AF37;
+    padding: 12px 15px;
+    border: 2px solid #D4AF37;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    text-align: center;
+    text-align-last: center;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url("data:image/svg+xml;utf8,<svg fill='%23D4AF37' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+}
+
+.dropdown:hover, .dropdown:focus {
+    background-color: #444;
+    box-shadow: 0 0 8px rgba(212, 175, 55, 0.5);
+}
+
+.dropdown option {
+    background-color: #222;
+    color: #D4AF37;
+    padding: 12px;
+}
+
+.menu-category-section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.menu-category-section[style*="display: block"] {
+    opacity: 1;
+    transform: translateY(0);
+}
     </style>
 </head>
 <body>
@@ -964,11 +1013,23 @@
     </section>
 
 
-    <!-- Drinks Menu Section -->
-    <div class="menu-section" id="drinks-menu">
-        <h2>Drinks Menu</h2>
-        
-        <!-- Champagne Category -->
+   <!-- Replace the existing drinks menu section with this code -->
+<div class="menu-section" id="drinks-menu">
+    <h2>Drinks Menu</h2>
+    
+    <!-- Dropdown for selecting drink categories -->
+    <div class="dropdown-container">
+        <select id="drinkCategory" class="dropdown" onchange="showCategory(this.value)">
+            <option value="">Select a Category</option>
+            <option value="champagne">Champagne</option>
+            <option value="cognac">Cognac</option>
+            <option value="vodka">Vodka</option>
+            <option value="beers">Beers & Ciders</option>
+        </select>
+    </div>
+    
+    <!-- Champagne Category -->
+    <div id="champagne" class="menu-category-section" style="display: none;">
         <h3 class="menu-category">Champagne</h3>
         <div class="menu-grid">
             <div class="menu-item">
@@ -998,8 +1059,10 @@
                 </div>
             </div>
         </div>
-        
-        <!-- Cognac Category -->
+    </div>
+    
+    <!-- Cognac Category -->
+    <div id="cognac" class="menu-category-section" style="display: none;">
         <h3 class="menu-category">Cognac</h3>
         <div class="menu-grid">
             <div class="menu-item">
@@ -1029,8 +1092,10 @@
                 </div>
             </div>
         </div>
-        
-        <!-- Vodka Category -->
+    </div>
+    
+    <!-- Vodka Category -->
+    <div id="vodka" class="menu-category-section" style="display: none;">
         <h3 class="menu-category">Vodka</h3>
         <div class="menu-grid">
             <div class="menu-item">
@@ -1052,8 +1117,7 @@
             </div>
             
             <div class="menu-item">
-                <img src="
-belvedere.jpg" alt="Belvedere" class="menu-image">
+                <img src="belvedere.jpg" alt="Belvedere" class="menu-image">
                 <div class="menu-info">
                     <h4 class="menu-name">Belvedere</h4>
                     <p class="menu-description">Crafted from Polish rye and purified water, delivering a distinctive, velvety smooth character.</p>
@@ -1061,8 +1125,10 @@ belvedere.jpg" alt="Belvedere" class="menu-image">
                 </div>
             </div>
         </div>
-        
-        <!-- Beers & Ciders Category -->
+    </div>
+    
+    <!-- Beers & Ciders Category -->
+    <div id="beers" class="menu-category-section" style="display: none;">
         <h3 class="menu-category">Beers & Ciders</h3>
         <div class="menu-grid">
             <div class="menu-item">
@@ -1102,6 +1168,7 @@ belvedere.jpg" alt="Belvedere" class="menu-image">
             </div>
         </div>
     </div>
+</div>
 
     <footer>
         <p>&copy; 2025 Sin Menlyn. All rights reserved.</p>
@@ -1121,6 +1188,18 @@ belvedere.jpg" alt="Belvedere" class="menu-image">
     </div>
 
     <script>
+	     function showCategory(category) {
+        // Hide all categories first
+        var categories = document.getElementsByClassName('menu-category-section');
+        for (var i = 0; i < categories.length; i++) {
+            categories[i].style.display = 'none';
+        }
+        
+        // Show the selected category
+        if (category) {
+            document.getElementById(category).style.display = 'block';
+        }
+    }
         function openModal() {
             document.getElementById('bookingModal').style.display = 'block';
         }
