@@ -500,6 +500,53 @@
         .back-to-top i {
             font-size: 1.5em;
         }
+		/* Hero Section */
+        .hero {
+            height: 80vh;
+         
+			background: url('images/champopo.png') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+            padding: 0 20px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+		 .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+        }
+
+        .hero p {
+            font-size: clamp(1rem, 2vw, 1.5rem);
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
+        }
+		.cta-button {
+            background-color: #D4AF37;
+            color: #000;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 30px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .cta-button:hover {
+            background-color: #fff;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
+        }
     </style>
 </head>
 <body>
@@ -520,8 +567,26 @@
         </ul>
     </div>
 
+     <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Indulge in the Forbidden</h1>
+            <button class="cta-button" onclick="openModal('bookingModal')">Reserve Your Night</button>
+        </div>
+    </section>
+
+     <!-- Social Media Links -->
+    <div class="social-media">
+        <a href="https://www.facebook.com/people/Sin-Menlyn/61558493771468/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/sinmenlyn/" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.tiktok.com/@sinnightclubmenlyn" target="_blank"><i class="fab fa-tiktok"></i></a>
+        <a href="https://wa.me/0637941057" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    </div>
+	
     <!-- Media Marquee Section -->
     <div class="media-marquee-container">
+	    <p>Nightlife stories</p>
         <div class="media-marquee-track">
             <!-- Item 1: Image -->
             <div class="media-marquee-item">
@@ -582,19 +647,12 @@
         </div>
     </div>
     
-    <!-- Social Media Links -->
-    <div class="social-media">
-        <a href="https://www.facebook.com/people/Sin-Menlyn/61558493771468/" target="_blank"><i class="fab fa-facebook-f"></i></a>
-        <a href="https://www.instagram.com/sinmenlyn/" target="_blank"><i class="fab fa-instagram"></i></a>
-        <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
-        <a href="https://www.tiktok.com/@sinnightclubmenlyn" target="_blank"><i class="fab fa-tiktok"></i></a>
-        <a href="https://wa.me/yourphonenumber" target="_blank"><i class="fab fa-whatsapp"></i></a>
-    </div>
 
     <!-- Specials and Packages Section -->
     <div class="specials-packages-container" id="specials">
-        <!-- Weekend Specials Section -->
-        <div class="weekend-specials">
+       
+	    <!-- Weekend Specials Section -->
+        <div class="specials">
             <div class="special-header">
                 Weekend Specials
                 <p class="special-time">Available from 22:00 pm - 00:00 am</p>
@@ -652,7 +710,7 @@
                 <div class="menu-info">
                     <h4 class="menu-name">Moet & Chandon Nectar Imperial</h4>
                     <p class="menu-description">A rich and fruity champagne with notes of pear, peach, and exotic fruits, perfect for celebration.</p>
-                    <p class="menu-price">R2500</p>
+                    <p class="menu-price">Enquire</p>
                 </div>
             </div>
             
@@ -661,7 +719,7 @@
                 <div class="menu-info">
                     <h4 class="menu-name">Moet & Chandon Ice Imperial</h4>
                     <p class="menu-description">The first champagne specifically created to be enjoyed over ice, with intense tropical fruit notes.</p>
-                    <p class="menu-price">R2800</p>
+                    <p class="menu-price">Enquire</p>
                 </div>
             </div>
             
@@ -670,7 +728,7 @@
                 <div class="menu-info">
                     <h4 class="menu-name">Veuve Clicquot Rich</h4>
                     <p class="menu-description">A sweeter expression designed for mixology, perfect with fresh fruits and premium mixers.</p>
-                    <p class="menu-price">R2600</p>
+                    <p class="menu-price">Enquire</p>
                 </div>
             </div>
         </div>
@@ -683,7 +741,7 @@
                 <div class="menu-info">
                     <h4 class="menu-name">Hennessy VS</h4>
                     <p class="menu-description">A bold and distinctive blend with notes of oak, toasted almond, and fresh grapes. The perfect foundation for cocktails.</p>
-                    <p class="menu-price">R1800</p>
+                    <p class="menu-price">Enquire</p>
                 </div>
             </div>
             
@@ -692,7 +750,7 @@
                 <div class="menu-info">
                     <h4 class="menu-name">Hennessy VSOP</h4>
                     <p class="menu-description">Aged for at least 4 years, offering a smooth balance of fruit and oak flavors with a hint of vanilla.</p>
-                    <p class="menu-price">R2200</p>
+                    <p class="menu-price">Enquire</p>
                 </div>
             </div>
             
@@ -701,7 +759,7 @@
                 <div class="menu-info">
                     <h4 class="menu-name">D'USSÉ VSOP</h4>
                     <p class="menu-description">A naturally smooth blend with notes of caramel, spices, and almond, aged in French oak barrels.</p>
-                    <p class="menu-price">R2500</p>
+                    <p class="menu-price">Enquire</p>
                 </div>
             </div>
         </div>
@@ -714,7 +772,7 @@
                 <div class="menu-info">
                     <h4 class="menu-name">Ciroc</h4>
                     <p class="menu-description">Distilled from French grapes for an exceptionally smooth, fresh taste with a hint of citrus.</p>
-                    <p class="menu-price">R1600</p>
+                    <p class="menu-price">Enquire</p>
                 </div>
             </div>
             
@@ -723,7 +781,7 @@
                 <div class="menu-info">
                     <h4 class="menu-name">Grey Goose</h4>
                     <p class="menu-description">Made with French wheat and pristine spring water, offering a crisp, fresh taste with a subtle sweetness.</p>
-                    <p class="menu-price">R1800</p>
+                    <p class="menu-price">Enquire</p>
                 </div>
             </div>
             
@@ -733,7 +791,7 @@ belvedere.jpg" alt="Belvedere" class="menu-image">
                 <div class="menu-info">
                     <h4 class="menu-name">Belvedere</h4>
                     <p class="menu-description">Crafted from Polish rye and purified water, delivering a distinctive, velvety smooth character.</p>
-                    <p class="menu-price">R1700</p>
+                    <p class="menu-price">Enquire</p>
                 </div>
             </div>
         </div>
@@ -746,7 +804,7 @@ belvedere.jpg" alt="Belvedere" class="menu-image">
                 <div class="menu-info">
                     <h4 class="menu-name">Corona</h4>
                     <p class="menu-description">A light, refreshing Mexican beer with a distinctive pale straw color and subtle hop character.</p>
-                    <p class="menu-price">R45</p>
+                    <p class="menu-price">Enquire</p>
                 </div>
             </div>
             
@@ -755,7 +813,7 @@ belvedere.jpg" alt="Belvedere" class="menu-image">
                 <div class="menu-info">
                     <h4 class="menu-name">Ice Tropez</h4>
                     <p class="menu-description">A sophisticated blend of rosé wine, sparkling water and peach, perfect for a refreshing experience.</p>
-                    <p class="menu-price">R135</p>
+                    <p class="menu-price">Enquire</p>
                 </div>
             </div>
             
@@ -764,7 +822,7 @@ belvedere.jpg" alt="Belvedere" class="menu-image">
                 <div class="menu-info">
                     <h4 class="menu-name">Brutal Fruit Ruby Apple</h4>
                     <p class="menu-description">A sweet, sparkling alcoholic apple beverage with a crisp, fruity finish.</p>
-                    <p class="menu-price">R45</p>
+                    <p class="menu-price">Enquire</p>
                 </div>
             </div>
             
@@ -773,7 +831,7 @@ belvedere.jpg" alt="Belvedere" class="menu-image">
                 <div class="menu-info">
                     <h4 class="menu-name">Heineken</h4>
                     <p class="menu-description">A premium lager with a balanced taste and subtle bitterness, served ice cold.</p>
-                    <p class="menu-price">R45</p>
+                    <p class="menu-price">Enquire</p>
                 </div>
             </div>
         </div>
@@ -786,12 +844,14 @@ belvedere.jpg" alt="Belvedere" class="menu-image">
             <li>
                 <h3 class="event-title">DJ Kabza de Small</h3>
                 <p class="event-date">27 March 2025</p>
+		<img src="" alt="" class=""
                 <p class="event-description">Free entry. Drink specials from 22:00 - 00:00!</p>
             </li>
             <li>
-                <h3 class="event-title">DJ So & So</h3>
+                <h3 class="event-title">Oscar Mbo</h3>
                 <p class="event-date">March 15, 2025</p>
-                <p class="event-description">The best DJ party ever!</p>
+		<img src="" alt="" class=""
+                <p class="event-description">Free entry. Drink specials from 22:00 - 00:00!</p>
             </li>
         </ul>
     </div>
