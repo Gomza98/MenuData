@@ -587,156 +587,114 @@
             color: #fff;
 
 	/* Packages Section */
-        .packages-section {
-            padding: 80px 0;
-            background: url('/api/placeholder/1200/800') center/cover fixed no-repeat;
-            position: relative;
-        }
-
-        .packages-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.85);
-        }
-
-        .packages-container {
-            position: relative;
-            z-index: 2;
-        }
-
-        .packages-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .package-card {
-            background: rgba(20, 20, 20, 0.7);
-            border: 1px solid #333;
-            border-radius: 10px;
-            padding: 40px 30px;
-            text-align: center;
-            transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
-        }
-
-        .package-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
-            background: rgba(30, 30, 30, 0.9);
-            border-color: #D4AF37;
-        }
-
-        .package-icon {
-            font-size: 3rem;
-            color: #D4AF37;
-            margin-bottom: 20px;
-        }
-
-        .package-title {
-            color: #D4AF37;
-            font-size: 1.8rem;
-            margin-bottom: 15px;
-            text-transform: uppercase;
-        }
-
-        .package-price {
-            font-size: 2.2rem;
-            color: #fff;
-            margin-bottom: 20px;
-            font-weight: bold;
-        }
-
-        .package-features {
-            list-style: none;
-            padding: 0;
-            margin: 0 0 30px 0;
-            color: #ccc;
-        }
-
-        .package-features li {
-            margin-bottom: 10px;
-            padding-bottom: 10px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .package-features li:last-child {
-            border-bottom: none;
-        }
-
-        .package-button {
-            background-color: #D4AF37;
-            color: #000;
-            border: none;
-            padding: 15px 30px;
-            border-radius: 30px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            display: inline-block;
-            text-decoration: none;
-        }
-
-        .package-button:hover {
-            background-color: #fff;
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
-        }
-/* Modify the packages section CSS */
+        /* Packages Section */
 .packages-section {
-    padding: 80px 0;
-    background-color: #000; /* Changed to match site theme */
-    position: relative;
+    background-color: #111; /* Dark background for premium look */
+    padding: 4em 2em;
+    text-align: center;
 }
 
-.packages-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.7);
-}
-
+/* Container */
 .packages-container {
-    position: relative;
-    z-index: 2;
-    width: 80%;
     max-width: 1200px;
     margin: 0 auto;
 }
 
+/* Section Header */
 .section-header h2 {
-    color: #D4AF37;
-    font-size: 2em;
-    margin-bottom: 1em;
-    text-align: center;
+    font-size: 2.5em;
+    color: #D4AF37; /* Gold color */
     text-transform: uppercase;
     letter-spacing: 0.1em;
+    margin-bottom: 1em;
+    font-weight: bold;
 }
 
+/* Packages Grid */
+.packages-grid {
+    display: flex;
+    justify-content: center;
+    gap: 2em;
+    flex-wrap: wrap;
+}
+
+/* Individual Package Card */
 .package-card {
-    background: #111;
-    border: 1px solid #333;
-    border-radius: 10px;
-    padding: 40px 30px;
+    background: #222; /* Slightly lighter than background */
+    padding: 2em;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
     text-align: center;
-    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    max-width: 320px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .package-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
-    background: #222;
-    border-color: #D4AF37;
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.8);
 }
+
+/* Package Icon */
+.package-icon i {
+    font-size: 3em;
+    color: #D4AF37;
+    margin-bottom: 0.5em;
+}
+
+/* Package Title */
+.package-title {
+    font-size: 1.8em;
+    color: #fff;
+    margin-bottom: 0.5em;
+}
+
+/* Package Price */
+.package-price {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #D4AF37;
+    margin-bottom: 1em;
+}
+
+/* Package Features List */
+.package-features {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 1.5em;
+}
+
+.package-features li {
+    font-size: 1.1em;
+    color: #ccc;
+    margin-bottom: 0.5em;
+}
+
+/* Book Now Button */
+.package-button {
+    display: inline-block;
+    padding: 0.8em 1.5em;
+    font-size: 1.2em;
+    color: #111;
+    background: #D4AF37;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.package-button:hover {
+    background: #c39d28;
+    transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .packages-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
     </style>
 </head>
 <body>
@@ -776,7 +734,7 @@
 	
     <!-- Media Marquee Section -->
     <div class="media-marquee-container">
-	    <p>Nightlife stories</p>
+	    <p><strong>Nightlife stories</strong></p>
         <div class="media-marquee-track">
             <!-- Item 1: Image -->
             <div class="media-marquee-item">
