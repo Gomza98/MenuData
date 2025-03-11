@@ -617,227 +617,26 @@
             overflow: hidden; /* Ensures no unwanted scroll effects */
         }
 
-	/* Celebration Packages Section */
-.celebration-packages-section {
-    padding: 80px 0;
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)), 
-                url('inside.png') center/cover fixed no-repeat;
-    position: relative;
-    overflow: hidden;
-}
+	 /* Celebration Packages Section */
+        .celebration-packages {
+            flex: 1; /* Same as Specials and Packages */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2em;
+            background-color: #222;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Consistent box-shadow */
+        }
+        .celebration-packages h2 {
+            color: #D4AF37;
+            font-size: 2em;
+            margin-bottom: 0.5em;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
 
-.celebration-packages-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(circle at center, rgba(212, 175, 55, 0.1) 0%, rgba(0, 0, 0, 0) 70%);
-    z-index: 1;
-}
-
-.celebration-packages-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-    position: relative;
-    z-index: 2;
-}
-
-.celebration-packages-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-    margin-top: 40px;
-}
-
-.celebration-package-card {
-    background: rgba(17, 17, 17, 0.8);
-    border: 1px solid rgba(212, 175, 55, 0.3);
-    border-radius: 15px;
-    padding: 40px 30px;
-    text-align: center;
-    transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-    position: relative;
-    overflow: hidden;
-}
-
-.celebration-package-card::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 5px;
-    background: linear-gradient(90deg, transparent, #D4AF37, transparent);
-    transform: scaleX(0);
-    transition: transform 0.5s;
-}
-
-.celebration-package-card:hover {
-    transform: translateY(-15px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 20px rgba(212, 175, 55, 0.3);
-    background: rgba(25, 25, 25, 0.9);
-    border-color: #D4AF37;
-}
-
-.celebration-package-card:hover::after {
-    transform: scaleX(1);
-}
-
-.celebration-package-icon {
-    font-size: 3rem;
-    color: #D4AF37;
-    margin-bottom: 25px;
-    transition: transform 0.5s;
-}
-
-.celebration-package-card:hover .celebration-package-icon {
-    transform: scale(1.2);
-}
-
-.celebration-package-title {
-    color: #D4AF37;
-    font-size: 1.8rem;
-    margin-bottom: 15px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    position: relative;
-    display: inline-block;
-}
-
-.celebration-package-title::after {
-    content: '';
-    position: absolute;
-    width: 50px;
-    height: 2px;
-    background-color: #D4AF37;
-    bottom: -8px;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.celebration-package-price {
-    font-size: 2.5rem;
-    color: #fff;
-    margin: 25px 0;
-    font-weight: bold;
-    text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
-}
-
-.celebration-package-features {
-    list-style: none;
-    padding: 0;
-    margin: 0 0 30px 0;
-    color: #ccc;
-    flex-grow: 1;
-}
-
-.celebration-package-features li {
-    margin-bottom: 15px;
-    padding-bottom: 15px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    transition: all 0.3s;
-}
-
-.celebration-package-card:hover .celebration-package-features li {
-    color: #fff;
-    border-bottom-color: rgba(212, 175, 55, 0.3);
-}
-
-.celebration-package-features li:last-child {
-    border-bottom: none;
-}
-
-.celebration-package-button {
-    background-color: rgba(212, 175, 55, 0.8);
-    color: #000;
-    border: none;
-    padding: 15px 30px;
-    border-radius: 30px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: all 0.4s;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    display: inline-block;
-    text-decoration: none;
-    margin-top: auto;
-    position: relative;
-    overflow: hidden;
-    z-index: 1;
-}
-
-.celebration-package-button::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #fff;
-    transform: translateX(-100%);
-    transition: transform 0.4s;
-    z-index: -1;
-}
-
-.celebration-package-button:hover {
-    color: #000;
-    transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(212, 175, 55, 0.4);
-}
-
-.celebration-package-button:hover::before {
-    transform: translateX(0);
-}
-
-.celebration-packages-section .section-header h2 {
-    color: #D4AF37;
-    font-size: clamp(2rem, 4vw, 2.8rem);
-    text-transform: uppercase;
-    letter-spacing: 4px;
-    display: inline-block;
-    padding-bottom: 15px;
-    position: relative;
-    margin-bottom: 20px;
-    text-shadow: 0 0 15px rgba(212, 175, 55, 0.5);
-}
-
-.celebration-packages-section .section-header h2::after {
-    content: '';
-    position: absolute;
-    width: 80%;
-    height: 2px;
-    background: linear-gradient(90deg, transparent, #D4AF37, transparent);
-    bottom: 0;
-    left: 10%;
-}
-
-@keyframes pulse {
-    0% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.4); }
-    70% { box-shadow: 0 0 0 15px rgba(212, 175, 55, 0); }
-    100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); }
-}
-
-.celebration-package-card:hover {
-    animation: pulse 2s infinite;
-}
-
-@media (max-width: 768px) {
-    .celebration-packages-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .celebration-package-card {
-        max-width: 400px;
-        margin: 0 auto;
-    }
-}
 		
         /* Section header for featured section */
         .section-header {
@@ -1052,57 +851,59 @@
         </div>
     </section>
 
- <section class="celebration-packages-section" id="packages">
-    <div class="celebration-packages-container">
-        <div class="section-header">
-            <h2>Celebration Packages</h2>
-        </div>
-        <div class="celebration-packages-grid">
-            <div class="celebration-package-card">
-                <div class="celebration-package-icon">
-                    <i class="fas fa-glass-cheers"></i>
-                </div>
-                <h3 class="celebration-package-title">Birthday Package</h3>
-                <p class="celebration-package-price">R3000</p>
-                <ul class="celebration-package-features">
-                    <li>Reserved area for up to 8 people</li>
-                    <li>1 Complimentary bottle</li>
-                    <li>Birthday cake</li>
-                    <li>VIP entrance</li>
-                </ul>
-                <a href="#" class="celebration-package-button" onclick="openModal('bookingModal')">Book Now</a>
+    <!-- Specials and Packages -->
+    <div class="specials-packages-container">
+        <!-- Weekend Specials Section -->
+        <section class="weekend-specials" id="specials">
+            <h2 class="special-header">Weekend Specials</h2>
+            <p class="special-time">Friday & Saturday Nights</p>
+            <div class="special-card">
+                <h3>Ladies' Night</h3>
+                <p>Free cocktails for ladies from 8 PM to 10 PM</p>
             </div>
-            <div class="celebration-package-card">
-                <div class="celebration-package-icon">
-                    <i class="fas fa-crown"></i>
-                </div>
-                <h3 class="celebration-package-title">VIP Experience</h3>
-                <p class="celebration-package-price">R4000</p>
-                <ul class="celebration-package-features">
-                    <li>Private booth</li>
-                    <li>Premium bottle service</li>
-                    <li>Dedicated server</li>
-                    <li>Complimentary hookah setup</li>
-                </ul>
-                <a href="#" class="celebration-package-button" onclick="openModal('bookingModal')">Book Now</a>
+            <div class="special-card">
+                <h3>Happy Hour</h3>
+                <p>50% off on selected drinks from 6 PM to 8 PM</p>
             </div>
-            <div class="celebration-package-card">
-                <div class="celebration-package-icon">
-                    <i class="fas fa-gem"></i>
-                </div>
-                <h3 class="celebration-package-title">Baller Package</h3>
-                <p class="celebration-package-price">R5000</p>
-                <ul class="celebration-package-features">
-                    <li>2 Premium bottles</li>
-                    <li>Reserved VIP section</li>
-                    <li>Unlimited mixers</li>
-                    <li>Priority entry & service</li>
-                </ul>
-                <a href="#" class="celebration-package-button" onclick="openModal('bookingModal')">Book Now</a>
+        </section>
+
+        <!-- Celebration Packages Section -->
+        <section class="celebration-packages" id="celebration-packages">
+            <h2 class="special-header">Celebration Packages</h2>
+            <div class="special-card">
+                <h3>Silver Celebration</h3>
+                <p>Bottle of champagne, cake, and reserved seating.</p>
             </div>
-        </div>
+            <div class="special-card">
+                <h3>Gold Celebration</h3>
+                <p>Premium liquor, cake, VIP access, and a personal server.</p>
+            </div>
+        </section>
+
+        <!-- Packages Section -->
+        <section class="packages" id="packages">
+            <h2 class="package-header">Exclusive Packages</h2>
+
+            <div class="package-card">
+                <h3>The "Gatsby" Package</h3>
+                <p> Bottle of Moet & Chandon + a selection of gourmet canapés + VIP seating.</p>
+                <p><strong>R2500</strong></p>
+            </div>
+
+            <div class="package-card">
+                <h3>The "Red Carpet" Package</h3>
+                <p>A bottle of premium champagne + a platter of sushi + expedited entry.</p>
+                <p><strong>R3500</strong></p>
+            </div>
+
+            <div class="package-card">
+                <h3>The "Sinful Indulgence" Package</h3>
+                <p>Two bottles of top-shelf liquor + personal server + exclusive access to the private lounge.</p>
+                <p><strong>R5000</strong></p>
+            </div>
+        </section>
     </div>
-</section>
+
 
 	<!-- Events Section -->
     <section class="events-section" id="events">
