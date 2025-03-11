@@ -617,25 +617,45 @@
             overflow: hidden; /* Ensures no unwanted scroll effects */
         }
 
-	 /* Celebration Packages Section */
-        .celebration-packages {
-            flex: 1; /* Same as Specials and Packages */
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 2em;
-            background-color: #222;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Consistent box-shadow */
-        }
-        .celebration-packages h2 {
-            color: #D4AF37;
-            font-size: 2em;
-            margin-bottom: 0.5em;
-            text-align: center;
+	/* Floating Celebration Packages Section */
+.floating-celebration-packages {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centers the div */
+    background-color: #222;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    padding: 2em;
+    text-align: center;
+    width: 80%; /* Adjust as needed */
+    max-width: 600px; /* Adjust as needed */
+    z-index: 2; /* Ensure it floats above other content */
+}
+
+/* Existing Classes - Package header and card */
+/* Book now button */
+.floating-celebration-packages .cta-button {
+            background-color: #D4AF37;
+            color: #000;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 30px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
             text-transform: uppercase;
-            letter-spacing: 0.1em;
-        }
+            letter-spacing: 1px;
+            text-decoration: none; /* Remove underline from the link */
+            display: inline-block; /* Make the button behave as a block element */
+}
+
+.floating-celebration-packages .cta-button:hover {
+            background-color: #fff;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
+}
+
 
 		
         /* Section header for featured section */
@@ -851,7 +871,7 @@
         </div>
     </section>
 
-    <!-- Specials and Packages -->
+        <!-- Specials and Packages -->
     <div class="specials-packages-container">
         <!-- Weekend Specials Section -->
         <section class="weekend-specials" id="specials">
