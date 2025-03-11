@@ -789,80 +789,7 @@
         }
 
 	
-        /* Menu Section - Grid Style */
-        .menu-section {
-            margin: 2em auto;
-            padding: 2em;
-            background-color: #222;
-            border-radius: 10px;
-            width: 80%;
-            max-width: 1200px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-        }
-
-        .menu-section h2 {
-            color: #D4AF37;
-            font-size: 2em;
-            margin-bottom: 1em;
-            text-align: center;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-        }
-
-        .menu-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 20px;
-        }
-
-        .menu-item {
-            background-color: #333;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-            transition: transform 0.3s ease;
-        }
-
-        .menu-item:hover {
-            transform: translateY(-5px);
-        }
-
-        .menu-image {
-            width: 100%;
-            height: 400px;
-            object-fit: cover;
-            border-bottom: 2px solid #D4AF37;
-        }
-
-        .menu-info {
-            padding: 15px;
-        }
-
-        .menu-name {
-            color: #D4AF37;
-            font-size: 1.4em;
-            margin-bottom: 10px;
-        }
-
-        .menu-description {
-            color: #ccc;
-            margin-bottom: 10px;
-            font-size: 0.9em;
-        }
-
-        .menu-price {
-            color: #fff;
-            font-weight: bold;
-            font-size: 1.2em;
-        }
-
-        .menu-category {
-            margin-top: 40px;
-            margin-bottom: 20px;
-            color: #D4AF37;
-            font-size: 1.6em;
-            border-bottom: 2px solid #D4AF37;
-            padding-bottom: 10px;
+    
         }
     </style>
 </head>
@@ -875,7 +802,7 @@
     <div class="nav-container">
         <ul class="nav-list">
             <li class="nav-item"><a href="#top" class="nav-link">Home</a></li>
-            <li class="nav-item"><a href="#events" class="nav-link">Events</a></li>
+            <li class="nav-item"><a href="#upcoming-events" class="nav-link">Events</a></li>
             <li class="nav-item"><a href="#contact" onclick="openModal('bookingModal'); return false;" class="nav-link">Contact</a></li>
             <li class="nav-item"><a href="#specials" class="nav-link">Specials</a></li>
             <li class="nav-item"><a href="#celebration" class="nav-link">Packages</a></li>
@@ -997,14 +924,14 @@
                             <h4>Basic Package</h4>
                             <p>Enjoy a night filled with music, dance, and fun.</p>
                             <span class="price-tag">$99</span>
-                            <button class="reserve-btn">Reserve Now</button>
+                            <button class="reserve-btn" onclick="openModal('bookingModal')">Reserve Now</button>
                         </div>
                         <div class="celebration-option premium">
                             <span class="premium-badge">Premium</span>
                             <h4>Premium Package</h4>
                             <p>Includes exclusive access to VIP areas and complimentary drinks.</p>
                             <span class="price-tag">$199</span>
-                            <button class="reserve-btn">Reserve Now</button>
+                            <button class="reserve-btn" onclick="openModal('bookingModal')">Reserve Now</button>
                         </div>
                     </div>
                 </div>
@@ -1018,14 +945,14 @@
                             <h4>Corporate Events</h4>
                             <p>Host your corporate events with a touch of class.</p>
                             <span class="price-tag">$299</span>
-                            <button class="reserve-btn">Reserve Now</button>
+                            <button class="reserve-btn" onclick="openModal('bookingModal')">Reserve Now</button>
                         </div>
                         <div class="celebration-option elite">
                             <span class="elite-badge">Elite</span>
                             <h4>Elite Package</h4>
                             <p>Experience luxury with our elite package, including private rooms and services.</p>
                             <span class="price-tag">$499</span>
-                            <button class="reserve-btn">Reserve Now</button>
+                            <button class="reserve-btn" onclick="openModal('bookingModal')">Reserve Now</button>
                         </div>
                     </div>
                 </div>
@@ -1040,158 +967,24 @@
             <li>
                 <h3 class="event-title">DJ Kabza de Small</h3>
                 <p class="event-date">27 March 2025</p>
-		<img src="" alt="" class=""
+		<img src="logo.jpg" alt="logo.jpg" class="logo.jpg">
+		    <p class="event-description">Join us for a world class performance by the biggest DJ in the Amapiano space</p>
                 <p class="event-description">Free entry. Drink specials from 22:00 - 00:00!</p>
+		    <button class="reserve-btn" onclick="openModal('bookingModal')">Reserve Now</button>
+		
             </li>
             <li>
                 <h3 class="event-title">Oscar Mbo</h3>
                 <p class="event-date">March 15, 2025</p>
-		<img src="" alt="" class=""
+		<img src="logo.jpg" alt="logo.jpg" class="logo.jpg">
+		      <p class="event-description">Join us for a world class performance by superstar DJ</p>
                 <p class="event-description">Free entry. Drink specials from 22:00 - 00:00!</p>
+		    <button class="reserve-btn" onclick="openModal('bookingModal')">Reserve Now</button>
             </li>
         </ul>
     </div>
-
-<!-- Drinks Menu Section -->
-    <div class="menu-section" id="drinks-menu">
-        <h2>Drinks Menu</h2>
-        
-        <!-- Champagne Category -->
-        <h3 class="menu-category">Champagne</h3>
-        <div class="menu-grid">
-            <div class="menu-item">
-                <img src="moetnectarimperial.jpg" alt="Moet & Chandon Nectar Imperial" class="menu-image">
-                <div class="menu-info">
-                    <h4 class="menu-name">Moet & Chandon Nectar Imperial</h4>
-                    <p class="menu-description">A rich and fruity champagne with notes of pear, peach, and exotic fruits, perfect for celebration.</p>
-                    <p class="menu-price">Enquire</p>
-                </div>
-            </div>
-            
-            <div class="menu-item">
-                <img src="moeticeimperial.jpg" alt="Moet & Chandon Ice Imperial" class="menu-image">
-                <div class="menu-info">
-                    <h4 class="menu-name">Moet & Chandon Ice Imperial</h4>
-                    <p class="menu-description">The first champagne specifically created to be enjoyed over ice, with intense tropical fruit notes.</p>
-                    <p class="menu-price">Enquire</p>
-                </div>
-            </div>
-            
-            <div class="menu-item">
-                <img src="veuverich.jpg" alt="Veuve Clicquot Rich" class="menu-image">
-                <div class="menu-info">
-                    <h4 class="menu-name">Veuve Clicquot Rich</h4>
-                    <p class="menu-description">A sweeter expression designed for mixology, perfect with fresh fruits and premium mixers.</p>
-                    <p class="menu-price">Enquire</p>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Cognac Category -->
-        <h3 class="menu-category">Cognac</h3>
-        <div class="menu-grid">
-            <div class="menu-item">
-                <img src="hennesseyvs.jpg" alt="Hennessy VS" class="menu-image">
-                <div class="menu-info">
-                    <h4 class="menu-name">Hennessy VS</h4>
-                    <p class="menu-description">A bold and distinctive blend with notes of oak, toasted almond, and fresh grapes. The perfect foundation for cocktails.</p>
-                    <p class="menu-price">Enquire</p>
-                </div>
-            </div>
-            
-            <div class="menu-item">
-                <img src="hennesseyvsop.jpg" alt="Hennessy VSOP" class="menu-image">
-                <div class="menu-info">
-                    <h4 class="menu-name">Hennessy VSOP</h4>
-                    <p class="menu-description">Aged for at least 4 years, offering a smooth balance of fruit and oak flavors with a hint of vanilla.</p>
-                    <p class="menu-price">Enquire</p>
-                </div>
-            </div>
-            
-            <div class="menu-item">
-                <img src="dussevsop.jpg" alt="D'USSÃ‰ VSOP" class="menu-image">
-                <div class="menu-info">
-                    <h4 class="menu-name">D'USSÃ‰ VSOP</h4>
-                    <p class="menu-description">A naturally smooth blend with notes of caramel, spices, and almond, aged in French oak barrels.</p>
-                    <p class="menu-price">Enquire</p>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Vodka Category -->
-        <h3 class="menu-category">Vodka</h3>
-        <div class="menu-grid">
-            <div class="menu-item">
-                <img src="ciroc.jpg" alt="Ciroc" class="menu-image">
-                <div class="menu-info">
-                    <h4 class="menu-name">Ciroc</h4>
-                    <p class="menu-description">Distilled from French grapes for an exceptionally smooth, fresh taste with a hint of citrus.</p>
-                    <p class="menu-price">Enquire</p>
-                </div>
-            </div>
-            
-            <div class="menu-item">
-                <img src="greygoose.jpg" alt="Grey Goose" class="menu-image">
-                <div class="menu-info">
-                    <h4 class="menu-name">Grey Goose</h4>
-                    <p class="menu-description">Made with French wheat and pristine spring water, offering a crisp, fresh taste with a subtle sweetness.</p>
-                    <p class="menu-price">Enquire</p>
-                </div>
-            </div>
-            
-            <div class="menu-item">
-                <img src="
-belvedere.jpg" alt="Belvedere" class="menu-image">
-                <div class="menu-info">
-                    <h4 class="menu-name">Belvedere</h4>
-                    <p class="menu-description">Crafted from Polish rye and purified water, delivering a distinctive, velvety smooth character.</p>
-                    <p class="menu-price">Enquire</p>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Beers & Ciders Category -->
-        <h3 class="menu-category">Beers & Ciders</h3>
-        <div class="menu-grid">
-            <div class="menu-item">
-                <img src="corona.jpg" alt="Corona" class="menu-image">
-                <div class="menu-info">
-                    <h4 class="menu-name">Corona</h4>
-                    <p class="menu-description">A light, refreshing Mexican beer with a distinctive pale straw color and subtle hop character.</p>
-                    <p class="menu-price">Enquire</p>
-                </div>
-            </div>
-            
-            <div class="menu-item">
-                <img src="icetropez.jpg" alt="Ice Tropez" class="menu-image">
-                <div class="menu-info">
-                    <h4 class="menu-name">Ice Tropez</h4>
-                    <p class="menu-description">A sophisticated blend of rosÃ© wine, sparkling water and peach, perfect for a refreshing experience.</p>
-                    <p class="menu-price">Enquire</p>
-                </div>
-            </div>
-            
-            <div class="menu-item">
-                <img src="brutalfruit.jpg" alt="Brutal Fruit Ruby Apple" class="menu-image">
-                <div class="menu-info">
-                    <h4 class="menu-name">Brutal Fruit Ruby Apple</h4>
-                    <p class="menu-description">A sweet, sparkling alcoholic apple beverage with a crisp, fruity finish.</p>
-                    <p class="menu-price">Enquire</p>
-                </div>
-            </div>
-            
-            <div class="menu-item">
-                <img src="heineken.jpg" alt="Heineken" class="menu-image">
-                <div class="menu-info">
-                    <h4 class="menu-name">Heineken</h4>
-                    <p class="menu-description">A premium lager with a balanced taste and subtle bitterness, served ice cold.</p>
-                    <p class="menu-price">Enquire</p>
-                </div>
-            </div>
-        </div>
-    </div>
 	
-	  <footer>
+<footer>
         <p>&copy; 2025 Sin Menlyn. All rights reserved.</p>
     </footer>
 
