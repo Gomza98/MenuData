@@ -616,46 +616,203 @@
             position: relative;
             overflow: hidden; /* Ensures no unwanted scroll effects */
         }
-
-	/* Floating Celebration Packages Section */
-.floating-celebration-packages {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); /* Centers the div */
-    background-color: #222;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-    padding: 2em;
-    text-align: center;
-    width: 80%; /* Adjust as needed */
-    max-width: 600px; /* Adjust as needed */
-    z-index: 2; /* Ensure it floats above other content */
+	/* Celebration Box Styling */
+.celebration-box {
+  background-color: #0a0a0a;
+  color: #ffffff;
+  padding: 4rem 2rem;
+  position: relative;
 }
 
-/* Existing Classes - Package header and card */
-/* Book now button */
-.floating-celebration-packages .cta-button {
-            background-color: #D4AF37;
-            color: #000;
-            padding: 12px 25px;
-            border: none;
-            border-radius: 30px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            text-decoration: none; /* Remove underline from the link */
-            display: inline-block; /* Make the button behave as a block element */
+.celebration-box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.8) 100%);
+  z-index: 1;
 }
 
-.floating-celebration-packages .cta-button:hover {
-            background-color: #fff;
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
+.celebration-container {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
+.celebration-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  border-bottom: 2px solid #d4af37;
+  padding-bottom: 1.5rem;
+}
+
+.celebration-header h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+  color: #d4af37;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+.celebration-header .tagline {
+  font-size: 1.2rem;
+  font-style: italic;
+  color: #a7a7a7;
+}
+
+.celebration-categories {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.celebration-category {
+  flex: 1;
+  min-width: 300px;
+  background-color: rgba(20, 20, 20, 0.8);
+  border: 1px solid #333;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.celebration-category:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(212, 175, 55, 0.2);
+}
+
+.category-icon {
+  text-align: center;
+  padding: 1.5rem 0;
+  background: linear-gradient(45deg, #000000, #222222);
+}
+
+.category-icon i {
+  font-size: 2.5rem;
+  color: #d4af37;
+}
+
+.celebration-category h3 {
+  text-align: center;
+  padding: 1rem;
+  background-color: #d4af37;
+  color: #000;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0;
+}
+
+.celebration-options {
+  padding: 1.5rem;
+}
+
+.celebration-option {
+  background-color: rgba(30, 30, 30, 0.7);
+  border-radius: 6px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-left: 4px solid #d4af37;
+  position: relative;
+  transition: transform 0.2s ease;
+}
+
+.celebration-option:hover {
+  transform: translateX(5px);
+}
+
+.celebration-option h4 {
+  color: #d4af37;
+  font-size: 1.4rem;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-family: 'Playfair Display', serif;
+}
+
+.celebration-option p {
+  color: #e0e0e0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.price-tag {
+  display: inline-block;
+  background-color: #d4af37;
+  color: #000;
+  padding: 0.5rem 1rem;
+  font-weight: bold;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+
+.reserve-btn {
+  background-color: transparent;
+  color: #d4af37;
+  border: 2px solid #d4af37;
+  padding: 0.6rem 1.2rem;
+  cursor: pointer;
+  font-weight: 600;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.9rem;
+}
+
+.reserve-btn:hover {
+  background-color: #d4af37;
+  color: #000;
+}
+
+/* Premium and Elite styling */
+.celebration-option.premium {
+  border-left: 4px solid #e5c100;
+  background-color: rgba(40, 40, 40, 0.8);
+}
+
+.celebration-option.elite {
+  border-left: 4px solid #ffd700;
+  background-color: rgba(50, 50, 50, 0.9);
+}
+
+.premium-badge, .elite-badge {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #e5c100;
+  color: #000;
+  font-size: 0.7rem;
+  padding: 0.3rem 0.6rem;
+  font-weight: bold;
+  border-bottom-left-radius: 4px;
+}
+
+.elite-badge {
+  background-color: #ffd700;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .celebration-categories {
+    flex-direction: column;
+  }
+  
+  .celebration-category {
+    min-width: 100%;
+  }
+  
+  .celebration-header h2 {
+    font-size: 2.5rem;
+  }
+}
 
 		
         /* Section header for featured section */
@@ -871,59 +1028,87 @@
         </div>
     </section>
 
-        <!-- Specials and Packages -->
-    <div class="specials-packages-container">
-        <!-- Weekend Specials Section -->
-        <section class="weekend-specials" id="specials">
-            <h2 class="special-header">Weekend Specials</h2>
-            <p class="special-time">Friday & Saturday Nights</p>
-            <div class="special-card">
-                <h3>Ladies' Night</h3>
-                <p>Free cocktails for ladies from 8 PM to 10 PM</p>
-            </div>
-            <div class="special-card">
-                <h3>Happy Hour</h3>
-                <p>50% off on selected drinks from 6 PM to 8 PM</p>
-            </div>
-        </section>
-
-        <!-- Celebration Packages Section -->
-        <section class="celebration-packages" id="celebration-packages">
-            <h2 class="special-header">Celebration Packages</h2>
-            <div class="special-card">
-                <h3>Silver Celebration</h3>
-                <p>Bottle of champagne, cake, and reserved seating.</p>
-            </div>
-            <div class="special-card">
-                <h3>Gold Celebration</h3>
-                <p>Premium liquor, cake, VIP access, and a personal server.</p>
-            </div>
-        </section>
-
-        <!-- Packages Section -->
-        <section class="packages" id="packages">
-            <h2 class="package-header">Exclusive Packages</h2>
-
-            <div class="package-card">
-                <h3>The "Gatsby" Package</h3>
-                <p> Bottle of Moet & Chandon + a selection of gourmet canapés + VIP seating.</p>
-                <p><strong>R2500</strong></p>
-            </div>
-
-            <div class="package-card">
-                <h3>The "Red Carpet" Package</h3>
-                <p>A bottle of premium champagne + a platter of sushi + expedited entry.</p>
-                <p><strong>R3500</strong></p>
-            </div>
-
-            <div class="package-card">
-                <h3>The "Sinful Indulgence" Package</h3>
-                <p>Two bottles of top-shelf liquor + personal server + exclusive access to the private lounge.</p>
-                <p><strong>R5000</strong></p>
-            </div>
-        </section>
+   <!-- Celebration Box Section -->
+<section class="celebration-box" id="celebration-box">
+  <div class="celebration-container">
+    <div class="celebration-header">
+      <h2>Celebration Box</h2>
+      <p class="tagline">Elevate Your Experience</p>
     </div>
-
+    
+    <div class="celebration-categories">
+      <!-- Birthday Category -->
+      <div class="celebration-category">
+        <div class="category-icon">
+          <i class="fas fa-birthday-cake"></i>
+        </div>
+        <h3>Birthday Selection</h3>
+        <div class="celebration-options">
+          <div class="celebration-option">
+            <h4>Silver Jubilee</h4>
+            <p>Bottle of Moët & Chandon, personalized cake, and reserved seating.</p>
+            <div class="price-tag">R2,500</div>
+            <button class="reserve-btn">Reserve Now</button>
+          </div>
+          <div class="celebration-option">
+            <h4>Golden Anniversary</h4>
+            <p>Premium liquor selection, custom cake, VIP access, and a dedicated server.</p>
+            <div class="price-tag">R3,500</div>
+            <button class="reserve-btn">Reserve Now</button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Baller Category -->
+      <div class="celebration-category">
+        <div class="category-icon">
+          <i class="fas fa-glass-cheers"></i>
+        </div>
+        <h3>Baller Selection</h3>
+        <div class="celebration-options">
+          <div class="celebration-option premium">
+            <div class="premium-badge">PREMIUM</div>
+            <h4>The Gatsby</h4>
+            <p>Two bottles of Moët & Chandon, gourmet canapés platter, and exclusive VIP seating.</p>
+            <div class="price-tag">R5,000</div>
+            <button class="reserve-btn">Reserve Now</button>
+          </div>
+          <div class="celebration-option premium">
+            <div class="premium-badge">PREMIUM</div>
+            <h4>Red Carpet</h4>
+            <p>Premium champagne tower, luxury sushi platter, and expedited entry with escort.</p>
+            <div class="price-tag">R6,500</div>
+            <button class="reserve-btn">Reserve Now</button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- VVIP Category -->
+      <div class="celebration-category">
+        <div class="category-icon">
+          <i class="fas fa-crown"></i>
+        </div>
+        <h3>VVIP Selection</h3>
+        <div class="celebration-options">
+          <div class="celebration-option elite">
+            <div class="elite-badge">ELITE</div>
+            <h4>Royal Indulgence</h4>
+            <p>Three bottles of top-shelf liquor, personal server, and exclusive private lounge access.</p>
+            <div class="price-tag">R10,000</div>
+            <button class="reserve-btn">Reserve Now</button>
+          </div>
+          <div class="celebration-option elite">
+            <div class="elite-badge">ELITE</div>
+            <h4>Ultimate Experience</h4>
+            <p>Bottle service all night, private chef catering, dedicated hostess, and VIP entrance.</p>
+            <div class="price-tag">R15,000</div>
+            <button class="reserve-btn">Reserve Now</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 	<!-- Events Section -->
     <section class="events-section" id="events">
