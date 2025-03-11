@@ -357,6 +357,15 @@
             margin-bottom: 20px;
             flex-grow: 1;
         }
+	    .event-image {
+            width: 80%;
+            max-width: 1200px;
+            margin: 2em auto;
+            background-color: #222;
+            border-radius: 10px;
+            padding: 2em;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
 
         .event-button {
             background-color: transparent;
@@ -967,7 +976,7 @@
             <li>
                 <h3 class="event-title">DJ Kabza de Small</h3>
                 <p class="event-date">27 March 2025</p>
-		<img src="logo.jpg" alt="logo.jpg" class="logo.jpg">
+		<img src="logo.jpg" alt="logo.jpg" class="event-image">
 		    <p class="event-description">Join us for a world class performance by the biggest DJ in the Amapiano space</p>
                 <p class="event-description">Free entry. Drink specials from 22:00 - 00:00!</p>
 		    <button class="reserve-btn" onclick="openModal('bookingModal')">Reserve Now</button>
@@ -976,7 +985,7 @@
             <li>
                 <h3 class="event-title">Oscar Mbo</h3>
                 <p class="event-date">March 15, 2025</p>
-		<img src="logo.jpg" alt="logo.jpg" class="logo.jpg">
+		<img src="logo.jpg" alt="logo.jpg" class="event-image">
 		      <p class="event-description">Join us for a world class performance by superstar DJ</p>
                 <p class="event-description">Free entry. Drink specials from 22:00 - 00:00!</p>
 		    <button class="reserve-btn" onclick="openModal('bookingModal')">Reserve Now</button>
@@ -990,7 +999,7 @@
 
     <a href="#top" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
 
-    < <!-- Modal -->
+ <!-- Modal -->
     <div id="bookingModal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal()">&times;</span>
