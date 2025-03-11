@@ -4,9 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sin Menlyn - Indulge in the Forbidden</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQ[...]" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
-        /* General Styles */
         body {
             font-family: 'Arial', sans-serif;
             background-color: #000;
@@ -17,7 +16,6 @@
             scroll-behavior: smooth;
         }
 
-        /* Header Styles */
         header {
             background-color: #000;
             padding: 10px 20px;
@@ -40,7 +38,6 @@
             margin: 0.5em 0;
         }
 
-        /* Book Table Button */
         .book-table-button {
             background-color: #D4AF37;
             color: #000;
@@ -62,24 +59,123 @@
             color: #000;
         }
 
-        /* Media Marquee Section */
+        .nav-container {
+            background-color: #111;
+            padding: 10px 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            margin-bottom: 1em;
+            overflow-x: auto;
+            white-space: nowrap;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: flex-start;
+        }
+
+        .nav-item {
+            margin: 0 15px;
+        }
+
+        .nav-link {
+            color: #D4AF37;
+            text-decoration: none;
+            font-size: 1.1em;
+            transition: color 0.3s ease;
+            padding: 8px 15px;
+            border-radius: 5px;
+        }
+
+        .nav-link:hover {
+            color: #fff;
+            background-color: #333;
+        }
+
+        .hero {
+            height: 80vh;
+            background: url('champopo.png') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+            padding: 0 20px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+        }
+
+        .cta-button {
+            background-color: #D4AF37;
+            color: #000;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 30px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .cta-button:hover {
+            background-color: #fff;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
+        }
+
+        .social-media {
+            text-align: center;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .social-media a {
+            color: #D4AF37;
+            font-size: 1.5em;
+            margin: 0 10px;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .social-media a:hover {
+            color: #e6c751;
+        }
+
         .media-marquee-container {
             overflow: hidden;
             background-color: #111;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
             margin: 1em 0;
             padding: 1em;
-            position: relative; /* Needed for absolute positioning of the track */
+            position: relative;
         }
-	p marquee{
-		 font-size: 1.1em;
+
+        .media-marquee-container p {
+            font-size: 1.1em;
             color: #D4AF37;
             margin: 0.5em 0;
-	}
+        }
+
         .media-marquee-track {
             display: flex;
-            width: calc(50px * 10); /* Adjust the 10 based on the number of items */
-            animation: mediaMarquee 40s linear infinite; /* Increase duration for smoother loop */
+            width: calc(50px * 10);
+            animation: mediaMarquee 40s linear infinite;
         }
 
         .media-marquee-item {
@@ -91,8 +187,7 @@
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
         }
 
-        .media-marquee-item img,
-        .media-marquee-item video {
+        .media-marquee-item img, .media-marquee-item video {
             width: 100%;
             height: 350px;
             display: block;
@@ -100,53 +195,49 @@
 
         @keyframes mediaMarquee {
             0% { transform: translateX(0); }
-            100% { transform: translateX(calc(-150px * 5)); } /* Half of items, for smooth loop */
+            100% { transform: translateX(calc(-150px * 5)); }
         }
 
-   /* Specials Section */
+        .specials {
+            width: 80%;
+            max-width: 1200px;
+            margin: 2em auto;
+            background-color: #222;
+            border-radius: 10px;
+            padding: 2em;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
 
-.specials {
-    width: 80%;
-    max-width: 1200px;
-    margin: 2em auto;
-    background-color: #222;
-    border-radius: 10px;
-    padding: 2em;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-}
+        .special-header {
+            color: #D4AF37;
+            font-size: 2em;
+            margin-bottom: 1em;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
 
-.special-header {
-    color: #D4AF37;
-    font-size: 2em;
-    margin-bottom: 1em;
-    text-align: center;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-}
+        .special-time {
+            font-size: 0.6em;
+            color: #ccc;
+            margin-top: 0.5em;
+        }
 
-.special-time {
-    font-size: 0.6em;
-    color: #ccc;
-    margin-top: 0.5em;
-}
+        .specials img {
+            width: 100%;
+            max-height: 500px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
 
-.specials img {
-    width: 100%;
-    max-height: 500px;
-    object-fit: cover;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-}
+        @media (max-width: 768px) {
+            .specials-container {
+                flex-direction: column;
+                gap: 1em;
+            }
+        }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .specials-container {
-        flex-direction: column;
-        gap: 1em;
-    }
-}
-
-        /* Menu Section - Grid Style */
         .menu-section {
             margin: 2em auto;
             padding: 2em;
@@ -222,87 +313,6 @@
             padding-bottom: 10px;
         }
 
-        /* Navigation Bar Styles */
-        .nav-container {
-            background-color: #111;
-            padding: 10px 20px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-            margin-bottom: 1em;
-            overflow-x: auto; /* Enable horizontal scrolling */
-            white-space: nowrap; /* Prevent items from wrapping */
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        .nav-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            justify-content: flex-start; /* Align items to the start */
-        }
-
-        .nav-item {
-            margin: 0 15px;
-        }
-
-        .nav-link {
-            color: #D4AF37;
-            text-decoration: none;
-            font-size: 1.1em;
-            transition: color 0.3s ease;
-            padding: 8px 15px;
-            border-radius: 5px;
-        }
-
-        .nav-link:hover {
-            color: #fff;
-            background-color: #333;
-        }
-        
-        /* Style adjustments for social media */
-        .social-media {
-            text-align: center;
-            margin-top: 20px;
-            margin-bottom: 20px;
-        }
-
-        .social-media a {
-            color: #D4AF37;
-            font-size: 1.5em;
-            margin: 0 10px;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .social-media a:hover {
-            color: #e6c751;
-        }
-
-        /* Dropdown Styles */
-        .dropdown {
-            background-color: #333;
-            color: #D4AF37;
-            padding: 0.6em 1em;
-            border: none;
-            border-radius: 5px;
-            font-size: 1em;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        .dropdown:hover {
-            background-color: #555;
-            color: #fff;
-        }
-
-        .dropdown option {
-            background-color: #222;
-            color: #D4AF37;
-        }
-
-       /* Events Section */
         .events-section {
             padding: 80px 0;
             background-color: #0a0a0a;
@@ -369,89 +379,201 @@
             color: #000;
         }
 
-        /* Footer Styles */
-        footer {
-            background-color: #111;
-            color: #D4AF37;
-            text-align: center;
-            padding: 1em;
-            width: 100%;
-            box-sizing: border-box;
-            border-top: 1px solid #333;
+        .celebration-box {
+            background-color: #0a0a0a;
+            color: #ffffff;
+            padding: 4rem 2rem;
+            position: relative;
         }
 
-        /* Modal Styles */
-        .modal {
-            display: none;
-            position: fixed;
+        .celebration-box::before {
+            content: '';
+            position: absolute;
             top: 0;
             left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.8);
-            z-index: 1000;
-            overflow: auto; /* Enable scroll if content is too long */
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.8) 100%);
+            z-index: 1;
         }
 
-        .modal-content {
+        .celebration-container {
             position: relative;
-            background-color: #333;
-            margin: 15% auto; /* Adjusted margin */
-            padding: 20px;
-            border: 1px solid #666;
-            width: 80%; /* Adjusted width */
-            max-width: 600px; /* Added max-width */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-            border-radius: 5px;
+            z-index: 2;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .celebration-header {
             text-align: center;
-            color: #eee; /* Light grey text color */
+            margin-bottom: 3rem;
+            border-bottom: 2px solid #d4af37;
+            padding-bottom: 1.5rem;
         }
 
-        .close {
-            position: absolute;
-            top: 10px;
-            right: 15px;
-            font-size: 24px;
-            font-weight: bold;
-            color: #D4AF37; /* Gold color */
-            cursor: pointer;
+        .celebration-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            color: #d4af37;
+            text-transform: uppercase;
+            letter-spacing: 3px;
         }
 
-        .close:hover {
-            color: #fff;
+        .celebration-header .tagline {
+            font-size: 1.2rem;
+            font-style: italic;
+            color: #a7a7a7;
         }
 
-        .modal-buttons {
-            margin-top: 20px;
+        .celebration-categories {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 10px;
+            gap: 2rem;
         }
 
-        .modal-button {
-            background-color: #D4AF37; /* Gold */
-            color: #000; /* Black */
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
+        .celebration-category {
+            flex: 1;
+            min-width: 300px;
+            background-color: rgba(20, 20, 20, 0.8);
+            border: 1px solid #333;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .celebration-category:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.2);
+        }
+
+        .category-icon {
+            text-align: center;
+            padding: 1.5rem 0;
+            background: linear-gradient(45deg, #000000, #222222);
+        }
+
+        .category-icon i {
+            font-size: 2.5rem;
+            color: #d4af37;
+        }
+
+        .celebration-category h3 {
+            text-align: center;
+            padding: 1rem;
+            background-color: #d4af37;
+            color: #000;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin: 0;
+        }
+
+        .celebration-options {
+            padding: 1.5rem;
+        }
+
+        .celebration-option {
+            background-color: rgba(30, 30, 30, 0.7);
+            border-radius: 6px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid #d4af37;
+            position: relative;
+            transition: transform 0.2s ease;
+        }
+
+        .celebration-option:hover {
+            transform: translateX(5px);
+        }
+
+        .celebration-option h4 {
+            color: #d4af37;
+            font-size: 1.4rem;
+            margin-top: 0;
+            margin-bottom: 1rem;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .celebration-option p {
+            color: #e0e0e0;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .price-tag {
+            display: inline-block;
+            background-color: #d4af37;
+            color: #000;
+            padding: 0.5rem 1rem;
+            font-weight: bold;
+            border-radius: 4px;
+            margin-bottom: 1rem;
+        }
+
+        .reserve-btn {
+            background-color: transparent;
+            color: #d4af37;
+            border: 2px solid #d4af37;
+            padding: 0.6rem 1.2rem;
             cursor: pointer;
-            transition: background-color 0.3s;
-            text-decoration: none; /* Remove underline */
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            font-weight: 600;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
         }
 
-        .modal-button i {
-            margin-right: 8px;
+        .reserve-btn:hover {
+            background-color: #d4af37;
+            color: #000;
         }
 
-        .modal-button:hover {
-            background-color: #e6c751; /* Lighter gold */
+        .celebration-option.premium {
+            border-left: 4px solid #e5c100;
+            background-color: rgba(40, 40, 40, 0.8);
         }
 
-        /* Back to top button */
+        .celebration-option.elite {
+            border-left: 4px solid #ffd700;
+            background-color: rgba(50, 50, 50, 0.9);
+        }
+
+        .premium-badge, .elite-badge {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background-color: #e5c100;
+            color: #000;
+            font-size: 0.7rem;
+            padding: 0.3rem 0.6rem;
+            font-weight: bold;
+            border-bottom-left-radius: 4px;
+        }
+
+        .elite-badge {
+            background-color: #ffd700;
+        }
+
+        @media (max-width: 768px) {
+            .celebration-categories {
+                flex-direction: column;
+            }
+
+            .celebration-category {
+                min-width: 100%;
+            }
+
+            .celebration-header h2 {
+                font-size: 2.5rem;
+            }
+        }
+
         .back-to-top {
             position: fixed;
             bottom: 20px;
@@ -478,406 +600,76 @@
         .back-to-top i {
             font-size: 1.5em;
         }
-		/* Hero Section */
-        .hero {
-            height: 80vh;
-         
-			background: url('champopo.png') center/cover no-repeat;
+
+                .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            overflow: auto;
+        }
+
+        .modal-content {
+            position: relative;
+            background-color: #333;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #666;
+            width: 80%;
+            max-width: 600px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            border-radius: 5px;
+            text-align: center;
+            color: #eee;
+        }
+
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 24px;
+            font-weight: bold;
+            color: #D4AF37;
+            cursor: pointer;
+        }
+
+        .close:hover {
+            color: #fff;
+        }
+
+        .modal-buttons {
+            margin-top: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .modal-button {
+            background-color: #D4AF37;
+            color: #000;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            text-decoration: none;
             display: flex;
             align-items: center;
             justify-content: center;
-            text-align: center;
-            color: #fff;
-            padding: 0 20px;
         }
 
-        .hero-content {
-            max-width: 800px;
-        }
-		 .hero h1 {
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            margin-bottom: 20px;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+        .modal-button i {
+            margin-right: 8px;
         }
 
-        .hero p {
-            font-size: clamp(1rem, 2vw, 1.5rem);
-            margin-bottom: 30px;
-            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
+        .modal-button:hover {
+            background-color: #e6c751;
         }
-		.cta-button {
-            background-color: #D4AF37;
-            color: #000;
-            padding: 12px 25px;
-            border: none;
-            border-radius: 30px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .cta-button:hover {
-            background-color: #fff;
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
-        }
-	/*Featured Section*/
-		 .featured-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 10px;
-        }
-	.section-header {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-
-        .section-header h2 {
-            color: #D4AF37;
-            font-size: clamp(1.8rem, 3vw, 2.5rem);
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            display: inline-block;
-            padding-bottom: 10px;
-            position: relative;
-        }
-
-        .section-header h2:after {
-            content: '';
-            position: absolute;
-            width: 60%;
-            height: 2px;
-            background-color: #D4AF37;
-            bottom: 0;
-            left: 20%;
-        }
-
-        .featured-card {
-            background-color: rgba(20, 20, 20, 0.8);
-            border-radius: 10px;
-            overflow: hidden;
-            transition: transform 0.3s, box-shadow 0.3s;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .featured-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
-        }
-
-        .featured-image {
-            height: 200px;
-            width: 100%;
-            object-fit: cover;
-        }
-
-        .featured-content {
-            padding: 25px;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .featured-title {
-            color: #D4AF37;
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-        }
-
-        .featured-text {
-            color: #ddd;
-            margin-bottom: 20px;
-            flex-grow: 1;
-        }
-
-        .featured-link {
-            color: #D4AF37;
-            text-decoration: none;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: color 0.3s;
-            align-self: flex-start;
-        }
-
-        .featured-link:hover {
-            color: #fff;
-	 .packages-section {
-            background: linear-gradient(135deg, rgba(17, 17, 17, 0.9), rgba(34, 34, 34, 0.9)); 
-            padding: 5em 2em;
-            text-align: center;
-            position: relative;
-            overflow: hidden; /* Ensures no unwanted scroll effects */
-        }
-	/* Celebration Box Styling */
-.celebration-box {
-  background-color: #0a0a0a;
-  color: #ffffff;
-  padding: 4rem 2rem;
-  position: relative;
-}
-
-.celebration-box::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(135deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.8) 100%);
-  z-index: 1;
-}
-
-.celebration-container {
-  position: relative;
-  z-index: 2;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.celebration-header {
-  text-align: center;
-  margin-bottom: 3rem;
-  border-bottom: 2px solid #d4af37;
-  padding-bottom: 1.5rem;
-}
-
-.celebration-header h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 3rem;
-  margin-bottom: 0.5rem;
-  color: #d4af37;
-  text-transform: uppercase;
-  letter-spacing: 3px;
-}
-
-.celebration-header .tagline {
-  font-size: 1.2rem;
-  font-style: italic;
-  color: #a7a7a7;
-}
-
-.celebration-categories {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 2rem;
-}
-
-.celebration-category {
-  flex: 1;
-  min-width: 300px;
-  background-color: rgba(20, 20, 20, 0.8);
-  border: 1px solid #333;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.celebration-category:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 15px 40px rgba(212, 175, 55, 0.2);
-}
-
-.category-icon {
-  text-align: center;
-  padding: 1.5rem 0;
-  background: linear-gradient(45deg, #000000, #222222);
-}
-
-.category-icon i {
-  font-size: 2.5rem;
-  color: #d4af37;
-}
-
-.celebration-category h3 {
-  text-align: center;
-  padding: 1rem;
-  background-color: #d4af37;
-  color: #000;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  margin: 0;
-}
-
-.celebration-options {
-  padding: 1.5rem;
-}
-
-.celebration-option {
-  background-color: rgba(30, 30, 30, 0.7);
-  border-radius: 6px;
-  padding: 1.5rem;
-  margin-bottom: 1.5rem;
-  border-left: 4px solid #d4af37;
-  position: relative;
-  transition: transform 0.2s ease;
-}
-
-.celebration-option:hover {
-  transform: translateX(5px);
-}
-
-.celebration-option h4 {
-  color: #d4af37;
-  font-size: 1.4rem;
-  margin-top: 0;
-  margin-bottom: 1rem;
-  font-family: 'Playfair Display', serif;
-}
-
-.celebration-option p {
-  color: #e0e0e0;
-  font-size: 0.95rem;
-  line-height: 1.6;
-  margin-bottom: 1.5rem;
-}
-
-.price-tag {
-  display: inline-block;
-  background-color: #d4af37;
-  color: #000;
-  padding: 0.5rem 1rem;
-  font-weight: bold;
-  border-radius: 4px;
-  margin-bottom: 1rem;
-}
-
-.reserve-btn {
-  background-color: transparent;
-  color: #d4af37;
-  border: 2px solid #d4af37;
-  padding: 0.6rem 1.2rem;
-  cursor: pointer;
-  font-weight: 600;
-  border-radius: 4px;
-  transition: all 0.3s ease;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-size: 0.9rem;
-}
-
-.reserve-btn:hover {
-  background-color: #d4af37;
-  color: #000;
-}
-
-/* Premium and Elite styling */
-.celebration-option.premium {
-  border-left: 4px solid #e5c100;
-  background-color: rgba(40, 40, 40, 0.8);
-}
-
-.celebration-option.elite {
-  border-left: 4px solid #ffd700;
-  background-color: rgba(50, 50, 50, 0.9);
-}
-
-.premium-badge, .elite-badge {
-  position: absolute;
-  top: 0;
-  right: 0;
-  background-color: #e5c100;
-  color: #000;
-  font-size: 0.7rem;
-  padding: 0.3rem 0.6rem;
-  font-weight: bold;
-  border-bottom-left-radius: 4px;
-}
-
-.elite-badge {
-  background-color: #ffd700;
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .celebration-categories {
-    flex-direction: column;
-  }
-  
-  .celebration-category {
-    min-width: 100%;
-  }
-  
-  .celebration-header h2 {
-    font-size: 2.5rem;
-  }
-}
-
-		
-        /* Section header for featured section */
-        .section-header {
-            text-align: center;
-            margin-bottom: 3em;
-        }
-
-        .section-header h2 {
-            font-size: 2.5em;
-            color: #D4AF37;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 0.5em;
-        }
-
-	/* Dropdown Menu Styles */
-.dropdown-container {
-    text-align: center;
-    margin: 30px auto;
-    width: 100%;
-    max-width: 300px;
-}
-
-.dropdown {
-    background-color: #333;
-    color: #D4AF37;
-    padding: 12px 15px;
-    border: 2px solid #D4AF37;
-    border-radius: 5px;
-    font-size: 1.1em;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    width: 100%;
-    text-align: center;
-    text-align-last: center;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    background-image: url("data:image/svg+xml;utf8,<svg fill='%23D4AF37' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
-    background-repeat: no-repeat;
-    background-position: right 10px center;
-}
-
-.dropdown:hover, .dropdown:focus {
-    background-color: #444;
-    box-shadow: 0 0 8px rgba(212, 175, 55, 0.5);
-}
-
-.dropdown option {
-    background-color: #222;
-    color: #D4AF37;
-    padding: 12px;
-}
-
-.menu-category-section {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.5s ease, transform 0.5s ease;
-}
-
-.menu-category-section[style*="display: block"] {
-    opacity: 1;
-    transform: translateY(0);
-}
     </style>
 </head>
 <body>
@@ -886,7 +678,6 @@
         <button class="book-table-button" onclick="openModal()">Book a Table</button>
     </header>
 
-    <!-- Navigation Bar -->
     <div class="nav-container">
         <ul class="nav-list">
             <li class="nav-item"><a href="#top" class="nav-link">Home</a></li>
@@ -898,7 +689,6 @@
         </ul>
     </div>
 
-     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="hero-content">
             <h1>Indulge in the Forbidden</h1>
@@ -906,7 +696,6 @@
         </div>
     </section>
 
-     <!-- Social Media Links -->
     <div class="social-media">
         <a href="https://www.facebook.com/people/Sin-Menlyn/61558493771468/" target="_blank"><i class="fab fa-facebook-f"></i></a>
         <a href="https://www.instagram.com/sinmenlyn/" target="_blank"><i class="fab fa-instagram"></i></a>
@@ -914,434 +703,154 @@
         <a href="https://www.tiktok.com/@sinnightclubmenlyn" target="_blank"><i class="fab fa-tiktok"></i></a>
         <a href="https://wa.me/0637941057" target="_blank"><i class="fab fa-whatsapp"></i></a>
     </div>
-	
-    <!-- Media Marquee Section -->
+
     <div class="media-marquee-container">
-	    <p><strong>Nightlife stories</strong></p>
+        <p><strong>Nightlife stories</strong></p>
         <div class="media-marquee-track">
-            <!-- Item 1: Image -->
             <div class="media-marquee-item">
                 <img src="views.png" alt="Image 1">
             </div>
-
-            <!-- Item 1: Image -->
             <div class="media-marquee-item">
                 <img src="kabza.JPG" alt="Image 1">
             </div>
-           
-            
-            <!-- Item 3: Image -->
             <div class="media-marquee-item">
                 <img src="weekend specials.jpg" alt="Image 2">
             </div>
-
-	    <!-- Item 3: Image -->
             <div class="media-marquee-item">
                 <img src="friday.JPG" alt="Image 2">
             </div>
-            
-           
-            
-            <!-- Item 5: Image -->
             <div class="media-marquee-item">
                 <img src="champopo.png" alt="Image 2">
             </div>
-            
-               <!-- Item 5: Image -->
             <div class="media-marquee-item">
                 <img src="weekend.JPG" alt="Image 2">
             </div>
-            
-            <!-- Item 7: Image -->
             <div class="media-marquee-item">
                 <img src="tower.png" alt="Image 2">
             </div>
-            
-            <!-- Item 7: Image -->
             <div class="media-marquee-item">
                 <img src="kabza.JPG" alt="Image 2">
             </div>
-            
-            <!-- Item 9: Image -->
             <div class="media-marquee-item">
                 <img src="inside.png" alt="Image 2">
             </div>
-            
-             <!-- Item 9: Image -->
             <div class="media-marquee-item">
                 <img src="sunday.JPG" alt="Image 2">
             </div>
-            
-            <!-- Item 11: Image -->
             <div class="media-marquee-item">
                 <img src="logo.jpg" alt="Image 2">
             </div>
         </div>
     </div>
-    
 
-    <!-- Specials and Packages Section -->
     <div class="specials-packages-container" id="specials">
-       
-	    <!-- Weekend Specials Section -->
         <div class="specials">
             <div class="special-header">
                 Weekend Specials
                 <p class="special-time">Available from 22:00 pm - 00:00 am</p>
             </div>
             <img src="specials.JPG" alt="specials">
-        </div>  
+        </div>
     </div>
-	
-	 <!-- Featured Section -->
+
     <section class="featured-section">
         <div class="container">
             <div class="section-header">
                 <h2>Why Choose Sin</h2>
             </div>
             <div class="featured-grid">
-                <div class="featured-card">
-                    <img src="champopo.png" alt="VIP Experience" class="featured-image">
-                    <div class="featured-content">
-                        <h3 class="featured-title">VIP Experience</h3>
-                        <p class="featured-text">[Add description about your premium VIP experience, bottle service, exclusive access, etc.]</p>
-                        <a href="#packages" class="featured-link">Explore VIP Packages</a>
-                    </div>
-                </div>
-                <div class="featured-card">
-                    <img src="views.png" alt="Top DJs" class="views">
-                    <div class="featured-content">
-                        <h3 class="featured-title">World-Class Entertainment</h3>
-                        <p class="featured-text">[Add description about your entertainment, DJs, performers, etc.]</p>
-                        <a href="#events" class="featured-link">Upcoming Events</a>
-                    </div>
-                </div>
-                <div class="featured-card">
-                    <img src="fullbucket.png" alt="Premium Drinks" class="featured-image">
-                    <div class="featured-content">
-                        <h3 class="featured-title">Premium Selections</h3>
-                        <p class="featured-text">[Add description about your premium drinks, cocktails, etc.]</p>
-                        <a href="#" class="featured-link" onclick="toggleDropdown()">View Menu</a>
-                    </div>
-                </div>
+                <!-- Add your featured items here -->
             </div>
         </div>
     </section>
 
-   <!-- Celebration Box Section -->
-<section class="celebration-box" id="celebration-box">
-  <div class="celebration-container">
-    <div class="celebration-header">
-      <h2>Celebration Box</h2>
-      <p class="tagline">Elevate Your Experience</p>
-    </div>
-    
-    <div class="celebration-categories">
-      <!-- Birthday Category -->
-      <div class="celebration-category">
-        <div class="category-icon">
-          <i class="fas fa-birthday-cake"></i>
-        </div>
-        <h3>Birthday Selection</h3>
-        <div class="celebration-options">
-          <div class="celebration-option">
-            <h4>Silver Jubilee</h4>
-            <p>Bottle of Moët & Chandon, personalized cake, and reserved seating.</p>
-            <div class="price-tag">R2,500</div>
-            <button class="reserve-btn">Reserve Now</button>
-          </div>
-          <div class="celebration-option">
-            <h4>Golden Anniversary</h4>
-            <p>Premium liquor selection, custom cake, VIP access, and a dedicated server.</p>
-            <div class="price-tag">R3,500</div>
-            <button class="reserve-btn">Reserve Now</button>
-          </div>
-        </div>
-      </div>
-      
-      <!-- Baller Category -->
-      <div class="celebration-category">
-        <div class="category-icon">
-          <i class="fas fa-glass-cheers"></i>
-        </div>
-        <h3>Baller Selection</h3>
-        <div class="celebration-options">
-          <div class="celebration-option premium">
-            <div class="premium-badge">PREMIUM</div>
-            <h4>The Gatsby</h4>
-            <p>Two bottles of Moët & Chandon, gourmet canapés platter, and exclusive VIP seating.</p>
-            <div class="price-tag">R5,000</div>
-            <button class="reserve-btn">Reserve Now</button>
-          </div>
-          <div class="celebration-option premium">
-            <div class="premium-badge">PREMIUM</div>
-            <h4>Red Carpet</h4>
-            <p>Premium champagne tower, luxury sushi platter, and expedited entry with escort.</p>
-            <div class="price-tag">R6,500</div>
-            <button class="reserve-btn">Reserve Now</button>
-          </div>
-        </div>
-      </div>
-      
-      <!-- VVIP Category -->
-      <div class="celebration-category">
-        <div class="category-icon">
-          <i class="fas fa-crown"></i>
-        </div>
-        <h3>VVIP Selection</h3>
-        <div class="celebration-options">
-          <div class="celebration-option elite">
-            <div class="elite-badge">ELITE</div>
-            <h4>Royal Indulgence</h4>
-            <p>Three bottles of top-shelf liquor, personal server, and exclusive private lounge access.</p>
-            <div class="price-tag">R10,000</div>
-            <button class="reserve-btn">Reserve Now</button>
-          </div>
-          <div class="celebration-option elite">
-            <div class="elite-badge">ELITE</div>
-            <h4>Ultimate Experience</h4>
-            <p>Bottle service all night, private chef catering, dedicated hostess, and VIP entrance.</p>
-            <div class="price-tag">R15,000</div>
-            <button class="reserve-btn">Reserve Now</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-	<!-- Events Section -->
-    <section class="events-section" id="events">
-        <div class="container">
-            <div class="section-header">
-                <h2>Upcoming Events</h2>
+    <div class="celebration-box" id="celebration">
+        <div class="celebration-container">
+            <div class="celebration-header">
+                <h2>Celebrate with Us</h2>
+                <p class="tagline">Make your nights unforgettable</p>
             </div>
-            <div class="events-container">
-                <div class="event-card">
-                    <span class="event-date">27 March 2025</span>
-                    <h3 class="event-title">DJ kabza de Small</h3>
-                    <p class="event-description">Come join us for a special night with superstar DJ Kabza de Small</p>
-                    <a href="#" class="event-button" onclick="openModal('bookingModal')">Reserve Now</a>
+            <div class="celebration-categories">
+                <div class="celebration-category">
+                    <div class="category-icon">
+                        <i class="fas fa-birthday-cake"></i>
+                    </div>
+                    <h3>Birthday Parties</h3>
+                    <div class="celebration-options">
+                        <div class="celebration-option">
+                            <h4>Basic Package</h4>
+                            <p>Enjoy a night filled with music, dance, and fun.</p>
+                            <span class="price-tag">$99</span>
+                            <button class="reserve-btn">Reserve Now</button>
+                        </div>
+                        <div class="celebration-option premium">
+                            <span class="premium-badge">Premium</span>
+                            <h4>Premium Package</h4>
+                            <p>Includes exclusive access to VIP areas and complimentary drinks.</p>
+                            <span class="price-tag">$199</span>
+                            <button class="reserve-btn">Reserve Now</button>
+                        </div>
+                    </div>
                 </div>
-                <div class="event-card">
-                    <span class="event-date">March 15, 2025</span>
-                    <h3 class="event-title">Oscar Mbo & Babalwa</h3>
-                    <p class="event-description">Come join us for a special night with superstar Oscar Mbo, coupled with the lovely vocals of Babalwa M</p>
-                    <a href="#" class="event-button" onclick="openModal('bookingModal')">Reserve Now</a>
-                </div>
-                <div class="event-card">
-                    <span class="event-date">Coming Soon</span>
-                    <h3 class="event-title">Celebrity Appearance</h3>
-                    <p class="event-description">[Add description about upcoming celebrity appearances or special events]</p>
-                    <a href="#" class="event-button" onclick="openModal('bookingModal')">Learn More</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-   <!-- Replace the existing drinks menu section with this code -->
-<div class="menu-section" id="drinks-menu">
-    <h2>Drinks Menu</h2>
-    
-    <!-- Dropdown for selecting drink categories -->
-    <div class="dropdown-container">
-        <select id="drinkCategory" class="dropdown" onchange="showCategory(this.value)">
-            <option value="">Select a Category</option>
-            <option value="champagne">Champagne</option>
-            <option value="cognac">Cognac</option>
-            <option value="vodka">Vodka</option>
-            <option value="beers">Beers & Ciders</option>
-        </select>
-    </div>
-    
-    <!-- Champagne Category -->
-    <div id="champagne" class="menu-category-section" style="display: none;">
-        <h3 class="menu-category">Champagne</h3>
-        <div class="menu-grid">
-            <div class="menu-item">
-                <img src="moetnectarimperial.jpg" alt="Moet & Chandon Nectar Imperial" class="menu-image">
-                <div class="menu-info">
-                    <h4 class="menu-name">Moet & Chandon Nectar Imperial</h4>
-                    <p class="menu-description">A rich and fruity champagne with notes of pear, peach, and exotic fruits, perfect for celebration.</p>
-                    <p class="menu-price">Enquire</p>
-                </div>
-            </div>
-            
-            <div class="menu-item">
-                <img src="moeticeimperial.jpg" alt="Moet & Chandon Ice Imperial" class="menu-image">
-                <div class="menu-info">
-                    <h4 class="menu-name">Moet & Chandon Ice Imperial</h4>
-                    <p class="menu-description">The first champagne specifically created to be enjoyed over ice, with intense tropical fruit notes.</p>
-                    <p class="menu-price">Enquire</p>
-                </div>
-            </div>
-            
-            <div class="menu-item">
-                <img src="veuverich.jpg" alt="Veuve Clicquot Rich" class="menu-image">
-                <div class="menu-info">
-                    <h4 class="menu-name">Veuve Clicquot Rich</h4>
-                    <p class="menu-description">A sweeter expression designed for mixology, perfect with fresh fruits and premium mixers.</p>
-                    <p class="menu-price">Enquire</p>
+                <div class="celebration-category">
+                    <div class="category-icon">
+                        <i class="fas fa-glass-cheers"></i>
+                    </div>
+                    <h3>Special Events</h3>
+                    <div class="celebration-options">
+                        <div class="celebration-option">
+                            <h4>Corporate Events</h4>
+                            <p>Host your corporate events with a touch of class.</p>
+                            <span class="price-tag">$299</span>
+                            <button class="reserve-btn">Reserve Now</button>
+                        </div>
+                        <div class="celebration-option elite">
+                            <span class="elite-badge">Elite</span>
+                            <h4>Elite Package</h4>
+                            <p>Experience luxury with our elite package, including private rooms and services.</p>
+                            <span class="price-tag">$499</span>
+                            <button class="reserve-btn">Reserve Now</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    
-    <!-- Cognac Category -->
-    <div id="cognac" class="menu-category-section" style="display: none;">
-        <h3 class="menu-category">Cognac</h3>
-        <div class="menu-grid">
-            <div class="menu-item">
-                <img src="hennesseyvs.jpg" alt="Hennessy VS" class="menu-image">
-                <div class="menu-info">
-                    <h4 class="menu-name">Hennessy VS</h4>
-                    <p class="menu-description">A bold and distinctive blend with notes of oak, toasted almond, and fresh grapes. The perfect foundation for cocktails.</p>
-                    <p class="menu-price">Enquire</p>
-                </div>
-            </div>
-            
-            <div class="menu-item">
-                <img src="hennesseyvsop.jpg" alt="Hennessy VSOP" class="menu-image">
-                <div class="menu-info">
-                    <h4 class="menu-name">Hennessy VSOP</h4>
-                    <p class="menu-description">Aged for at least 4 years, offering a smooth balance of fruit and oak flavors with a hint of vanilla.</p>
-                    <p class="menu-price">Enquire</p>
-                </div>
-            </div>
-            
-            <div class="menu-item">
-                <img src="dussevsop.jpg" alt="D'USSÉ VSOP" class="menu-image">
-                <div class="menu-info">
-                    <h4 class="menu-name">D'USSÉ VSOP</h4>
-                    <p class="menu-description">A naturally smooth blend with notes of caramel, spices, and almond, aged in French oak barrels.</p>
-                    <p class="menu-price">Enquire</p>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <!-- Vodka Category -->
-    <div id="vodka" class="menu-category-section" style="display: none;">
-        <h3 class="menu-category">Vodka</h3>
-        <div class="menu-grid">
-            <div class="menu-item">
-                <img src="ciroc.jpg" alt="Ciroc" class="menu-image">
-                <div class="menu-info">
-                    <h4 class="menu-name">Ciroc</h4>
-                    <p class="menu-description">Distilled from French grapes for an exceptionally smooth, fresh taste with a hint of citrus.</p>
-                    <p class="menu-price">Enquire</p>
-                </div>
-            </div>
-            
-            <div class="menu-item">
-                <img src="greygoose.jpg" alt="Grey Goose" class="menu-image">
-                <div class="menu-info">
-                    <h4 class="menu-name">Grey Goose</h4>
-                    <p class="menu-description">Made with French wheat and pristine spring water, offering a crisp, fresh taste with a subtle sweetness.</p>
-                    <p class="menu-price">Enquire</p>
-                </div>
-            </div>
-            
-            <div class="menu-item">
-                <img src="belvedere.jpg" alt="Belvedere" class="menu-image">
-                <div class="menu-info">
-                    <h4 class="menu-name">Belvedere</h4>
-                    <p class="menu-description">Crafted from Polish rye and purified water, delivering a distinctive, velvety smooth character.</p>
-                    <p class="menu-price">Enquire</p>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <!-- Beers & Ciders Category -->
-    <div id="beers" class="menu-category-section" style="display: none;">
-        <h3 class="menu-category">Beers & Ciders</h3>
-        <div class="menu-grid">
-            <div class="menu-item">
-                <img src="corona.jpg" alt="Corona" class="menu-image">
-                <div class="menu-info">
-                    <h4 class="menu-name">Corona</h4>
-                    <p class="menu-description">A light, refreshing Mexican beer with a distinctive pale straw color and subtle hop character.</p>
-                    <p class="menu-price">Enquire</p>
-                </div>
-            </div>
-            
-            <div class="menu-item">
-                <img src="icetropez.jpg" alt="Ice Tropez" class="menu-image">
-                <div class="menu-info">
-                    <h4 class="menu-name">Ice Tropez</h4>
-                    <p class="menu-description">A sophisticated blend of rosé wine, sparkling water and peach, perfect for a refreshing experience.</p>
-                    <p class="menu-price">Enquire</p>
-                </div>
-            </div>
-            
-            <div class="menu-item">
-                <img src="brutalfruit.jpg" alt="Brutal Fruit Ruby Apple" class="menu-image">
-                <div class="menu-info">
-                    <h4 class="menu-name">Brutal Fruit Ruby Apple</h4>
-                    <p class="menu-description">A sweet, sparkling alcoholic apple beverage with a crisp, fruity finish.</p>
-                    <p class="menu-price">Enquire</p>
-                </div>
-            </div>
-            
-            <div class="menu-item">
-                <img src="heineken.jpg" alt="Heineken" class="menu-image">
-                <div class="menu-info">
-                    <h4 class="menu-name">Heineken</h4>
-                    <p class="menu-description">A premium lager with a balanced taste and subtle bitterness, served ice cold.</p>
-                    <p class="menu-price">Enquire</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 
     <footer>
         <p>&copy; 2025 Sin Menlyn. All rights reserved.</p>
     </footer>
 
-    <!-- Modal -->
+    <a href="#top" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
+
     <div id="bookingModal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal()">&times;</span>
             <h2>Book Your Table</h2>
-            <p>Please contact us to book a table:</p>
+            <p>Fill in your details to reserve your table.</p>
             <div class="modal-buttons">
-                <a href="tel:+27637941057" class="modal-button">Call Us</a>
-                <a href="mailto:info@sinmenlyn.com" class="modal-button">Email Us</a>
+                <a href="#" class="modal-button"><i class="fas fa-calendar-alt"></i> Book Now</a>
             </div>
         </div>
     </div>
 
     <script>
-	     function showCategory(category) {
-        // Hide all categories first
-        var categories = document.getElementsByClassName('menu-category-section');
-        for (var i = 0; i < categories.length; i++) {
-            categories[i].style.display = 'none';
-        }
-        
-        // Show the selected category
-        if (category) {
-            document.getElementById(category).style.display = 'block';
-        }
-    }
-        function openModal() {
-            document.getElementById('bookingModal').style.display = 'block';
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = 'block';
         }
 
         function closeModal() {
-            document.getElementById('bookingModal').style.display = 'none';
+            document.querySelector('.modal').style.display = 'none';
         }
 
-        window.onclick = function(event) {
-            var modal = document.getElementById('bookingModal');
-            if (event.target == modal) {
-                modal.style.display = 'none';
+        window.onscroll = function() {
+            var backToTopButton = document.querySelector('.back-to-top');
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                backToTopButton.classList.add('visible');
+            } else {
+                backToTopButton.classList.remove('visible');
             }
         }
     </script>
 </body>
 </html>
-	
